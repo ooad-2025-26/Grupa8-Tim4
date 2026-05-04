@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BentoLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+230fdb11befd68ec1a10a2b33d44d4bfc57321b4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ec86fee3113edb6d642239823f011a767b65bee0")]
 [assembly: System.Reflection.AssemblyProductAttribute("BentoLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BentoLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
