@@ -34,5 +34,6 @@ namespace BentoLab.Data
         }
         public DbSet<BentoLab.Models.Korisnik> Korisnik { get; set; } = default!;
         public DbSet<BentoLab.Models.Torta> Torta { get; set; } = default!;
+        public DbSet<BentoLab.Models.Dekoracija> Dekoracija { get; set; } = default!;
     }
 }
