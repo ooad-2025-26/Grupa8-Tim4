@@ -1,18 +1,19 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace BentoLab.Models
 {
-    public class Korisnik
+    public class Korisnik : IdentityUser<int>
     {
-        [Key]
+        [NotMapped]
         public int KorisnikID { get; set; }
 
-        public string ImePrezime { get; set; }
-
-        public string Email { get; set; }
-
+        [NotMapped]
         public string Lozinka { get; set; }
+
+        public string ImePrezime { get; set; }
 
         public Uloga Uloga { get; set; }
 

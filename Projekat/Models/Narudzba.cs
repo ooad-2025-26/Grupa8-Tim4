@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Collections.Generic;
 
+
 namespace BentoLab.Models
 {
     public class Narudzba
