@@ -20,29 +20,30 @@ namespace BentoLab.Controllers
             _userManager = userManager;
         }
 
+        // PREGLED SVIH NARUDZBI (Tvoja tabela)
         public async Task<IActionResult> Index()
         {
-            var narudzbe = _context.Narudzbe
-            .Include(n => n.Korisnik);
-
+            var narudzbe = _context.Narudzbe.Include(n => n.Korisnik);
             return View(await narudzbe.ToListAsync());
         }
 
+        // DETALJI NARUDZBE
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null) return NotFound();
 
             var narudzba = await _context.Narudzbe
-            .Include(n => n.Korisnik)
-            .Include(n => n.Stavke)
-            .ThenInclude(s => s.Torta)
-            .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+                .Include(n => n.Korisnik)
+                .Include(n => n.Stavke)
+                .ThenInclude(s => s.Torta)
+                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
 
             if (narudzba == null) return NotFound();
 
             return View(narudzba);
         }
 
+        // STRANICA ZA KREIRANJE (GET)
         public IActionResult Create()
         {
             var narudzba = new Narudzba
@@ -53,6 +54,7 @@ namespace BentoLab.Controllers
             return View(narudzba);
         }
 
+        // SPASAVANJE NARUDZBE (POST) - OPCIJA B (POTPUNO POVEZANO)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DatumPreuzimanja,NacinPreuzimanja")] Narudzba narudzba)
@@ -62,28 +64,30 @@ namespace BentoLab.Controllers
             if (korisnik == null)
                 return RedirectToPage("/Account/Login", new { area = "Identity" });
 
+            // Automatsko postavljanje sistemskih polja u pozadini
             narudzba.KorisnikID = korisnik.Id;
             narudzba.DatumNarudzbe = DateTime.UtcNow;
             narudzba.DatumPreuzimanja = DateTime.SpecifyKind(narudzba.DatumPreuzimanja, DateTimeKind.Utc);
             narudzba.Status = StatusNarudzbe.KREIRANA;
-            narudzba.UkupnaCijena = 0;
+            narudzba.UkupnaCijena = 0; // Početna cijena je 0 dok korisnik ne doda torte kroz stavke
             narudzba.KoeficijentSlozenosti = 1;
 
+            // Čišćenje modela od povezanih objekata da ne blokiraju validaciju
             ModelState.Remove("Korisnik");
             ModelState.Remove("Stavke");
             ModelState.Remove("Dostava");
             ModelState.Remove("Obavjestenja");
 
-            if (ModelState.IsValid)
-            {
-                _context.Add(narudzba);
-                await _context.SaveChangesAsync();
-                return RedirectToAction("Create", "StavkaNarudzbes");
-            }
+            // Spašavanje nove narudžbe u bazu podataka kako bi dobila svoj ID
+            _context.Add(narudzba);
+            await _context.SaveChangesAsync();
 
-            return View(narudzba);
+            // POVEZIVANJE S DRUGIM DIJELOM: Preusmjeravanje na dodavanje torti (stavki) za ovu narudžbu
+            // Prosljeđujemo kreirani NarudzbaID kontroleru za stavke
+            return RedirectToAction("Create", "StavkaNarudzbes", new { narudzbaId = narudzba.NarudzbaID });
         }
 
+        // EDIT (GET)
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null) return NotFound();
@@ -94,6 +98,7 @@ namespace BentoLab.Controllers
             return View(narudzba);
         }
 
+        // EDIT (POST)
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,Status,DatumNarudzbe,DatumPreuzimanja,NacinPreuzimanja,KorisnikID")] Narudzba narudzba)
@@ -129,19 +134,21 @@ namespace BentoLab.Controllers
             return View(narudzba);
         }
 
+        // DELETE (GET)
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
 
             var narudzba = await _context.Narudzbe
-            .Include(n => n.Korisnik)
-            .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+                .Include(n => n.Korisnik)
+                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
 
             if (narudzba == null) return NotFound();
 
             return View(narudzba);
         }
 
+        // DELETE (POST)
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
