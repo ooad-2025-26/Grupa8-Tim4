@@ -1,0 +1,95 @@
+﻿@model IEnumerable<BentoLab.Models.Narudzba>
+
+@{
+    ViewData["Title"] = "Admin Panel - Narudžbe";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Admin Panel - Pregled svih narudžbi</h2>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left"></i> Nazad na početnu
+        </a>
+    </div>
+
+    <div class="card shadow">
+        <div class="card-header bg-dark text-white">
+            <h5 class="mb-0">Lista aktivnih i završenih narudžbi</h5>
+        </div>
+        <div class="card-body p-0">
+            <table class="table table-hover table-striped mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID Narudžbe</th>
+                        <th>Korisnik ID</th>
+                        <th>Ukupna Cijena</th>
+                        <th>Datum Narudžbe</th>
+                        <th>Datum Preuzimanja</th>
+                        <th>Trenutni Status</th>
+                        <th>Akcija (Promijeni Status)</th>
+                        <th>Detalji</th> @* Nova kolona *@
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var narudzba in Model)
+                    {
+                        <tr>
+                            <td><strong>#@narudzba.NarudzbaID</strong></td>
+                            <td>@narudzba.KorisnikID</td>
+                            <td>@narudzba.UkupnaCijena KM</td>
+                            <td>@narudzba.DatumNarudzbe.ToString("dd.MM.yyyy HH:mm")</td>
+                            <td>@narudzba.DatumPreuzimanja.ToString("dd.MM.yyyy")</td>
+                            <td>
+                                @if (narudzba.Status == BentoLab.Models.StatusNarudzbe.KREIRANA)
+                                {
+                                    <span class="badge bg-primary">Kreirana</span>
+                                }
+                                else if (narudzba.Status == BentoLab.Models.StatusNarudzbe.POTVRDJENA)
+                                {
+
+                                    <span class="badge bg-warning text-dark">Potvrđena</span>
+                                }
+                                else if (narudzba.Status == BentoLab.Models.StatusNarudzbe.U_IZRADI)
+                                {
+
+                                    <span class="badge bg-info text-dark">U izradi</span>
+                                }
+                                else if (narudzba.Status == BentoLab.Models.StatusNarudzbe.ZAVRSENA)
+                                {
+
+                                    <span class="badge bg-success">Završena</span>
+                                }
+                                else
+                                {
+
+                                    <span class="badge bg-danger">Otkazana</span>
+                                }
+                            </td>
+                            <td>
+                                <form asp-controller="AdminNarudzbe" asp-action="PromijeniStatus" method="post" class="d-flex gap-2">
+                                    <input type="hidden" name="id" value="@narudzba.NarudzbaID" />
+
+                                    <select name="noviStatus" class="form-select form-select-sm" style="width: auto;">
+                                        <option value="KREIRANA">Kreirana</option>
+                                        <option value="POTVRDJENA">Potvrđena</option>
+                                        <option value="U_IZRADI">U izradi</option>
+                                        <option value="ZAVRSENA">Završena</option>
+                                        <option value="OTKAZANA">Otkazana</option>
+                                    </select>
+
+                                    <button type="submit" class="btn btn-sm btn-dark">Spremi</button>
+                                </form>
+                            </td>
+                            <td>
+                                @* Dugme koje vodi na detaljan pregled stavki te narudžbe *@
+                                <a asp-controller="Narudzbas" asp-action="Details" asp-route-id="@narudzba.NarudzbaID" class="btn btn-sm btn-outline-primary">
+                                    Pogledaj stavke
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

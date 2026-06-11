@@ -1,170 +1,119 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using BentoLab.Data;
 using BentoLab.Models;
+using System.Security.Claims; // Omogućava prepoznavanje prijavljenog korisnika Amre
 
 namespace BentoLab.Controllers
 {
     public class NarudzbasController : Controller
     {
         private readonly ApplicationDbContext _context;
-        private readonly UserManager<Korisnik> _userManager;
 
-        public NarudzbasController(ApplicationDbContext context, UserManager<Korisnik> userManager)
+        public NarudzbasController(ApplicationDbContext context)
         {
             _context = context;
-            _userManager = userManager;
         }
 
-        // PREGLED SVIH NARUDZBI (Tvoja tabela)
+        // GET: Narudzbas
+        // Prikazuje tabelu sa svim narudžbama
         public async Task<IActionResult> Index()
         {
-            var narudzbe = _context.Narudzbe.Include(n => n.Korisnik);
-            return View(await narudzbe.ToListAsync());
-        }
-
-        // DETALJI NARUDZBE
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var narudzba = await _context.Narudzbe
+            var narudzbe = await _context.Narudzbe
                 .Include(n => n.Korisnik)
                 .Include(n => n.Stavke)
-                .ThenInclude(s => s.Torta)
-                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+                .OrderByDescending(n => n.NarudzbaID)
+                .ToListAsync();
 
-            if (narudzba == null) return NotFound();
-
-            return View(narudzba);
-        }
-
-        // STRANICA ZA KREIRANJE (GET)
-        public IActionResult Create()
-        {
-            var narudzba = new Narudzba
+            foreach (var narudzba in narudzbe)
             {
-                DatumPreuzimanja = DateTime.Now.AddDays(7)
-            };
-
-            return View(narudzba);
-        }
-
-        // SPASAVANJE NARUDZBE (POST) - OPCIJA B (POTPUNO POVEZANO)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DatumPreuzimanja,NacinPreuzimanja")] Narudzba narudzba)
-        {
-            var korisnik = await _userManager.GetUserAsync(User);
-
-            if (korisnik == null)
-                return RedirectToPage("/Account/Login", new { area = "Identity" });
-
-            // Automatsko postavljanje sistemskih polja u pozadini
-            narudzba.KorisnikID = korisnik.Id;
-            narudzba.DatumNarudzbe = DateTime.UtcNow;
-            narudzba.DatumPreuzimanja = DateTime.SpecifyKind(narudzba.DatumPreuzimanja, DateTimeKind.Utc);
-            narudzba.Status = StatusNarudzbe.KREIRANA;
-            narudzba.UkupnaCijena = 0; // Početna cijena je 0 dok korisnik ne doda torte kroz stavke
-            narudzba.KoeficijentSlozenosti = 1;
-
-            // Čišćenje modela od povezanih objekata da ne blokiraju validaciju
-            ModelState.Remove("Korisnik");
-            ModelState.Remove("Stavke");
-            ModelState.Remove("Dostava");
-            ModelState.Remove("Obavjestenja");
-
-            // Spašavanje nove narudžbe u bazu podataka kako bi dobila svoj ID
-            _context.Add(narudzba);
-            await _context.SaveChangesAsync();
-
-            // POVEZIVANJE S DRUGIM DIJELOM: Preusmjeravanje na dodavanje torti (stavki) za ovu narudžbu
-            // Prosljeđujemo kreirani NarudzbaID kontroleru za stavke
-            return RedirectToAction("Create", "StavkaNarudzbes", new { narudzbaId = narudzba.NarudzbaID });
-        }
-
-        // EDIT (GET)
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var narudzba = await _context.Narudzbe.FindAsync(id);
-            if (narudzba == null) return NotFound();
-
-            return View(narudzba);
-        }
-
-        // EDIT (POST)
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,Status,DatumNarudzbe,DatumPreuzimanja,NacinPreuzimanja,KorisnikID")] Narudzba narudzba)
-        {
-            if (id != narudzba.NarudzbaID) return NotFound();
-
-            ModelState.Remove("Korisnik");
-            ModelState.Remove("Stavke");
-            ModelState.Remove("Dostava");
-            ModelState.Remove("Obavjestenja");
-
-            narudzba.DatumNarudzbe = DateTime.SpecifyKind(narudzba.DatumNarudzbe, DateTimeKind.Utc);
-            narudzba.DatumPreuzimanja = DateTime.SpecifyKind(narudzba.DatumPreuzimanja, DateTimeKind.Utc);
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (narudzba.UkupnaCijena == 0 && narudzba.Stavke != null && narudzba.Stavke.Any())
                 {
-                    _context.Update(narudzba);
-                    await _context.SaveChangesAsync();
+                    narudzba.UkupnaCijena = narudzba.Stavke.Sum(s => s.CijenaStavke);
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NarudzbaExists(narudzba.NarudzbaID))
-                        return NotFound();
-
-                    throw;
-                }
-
-                return RedirectToAction(nameof(Index));
             }
 
-            return View(narudzba);
+            return View(narudzbe);
         }
 
-        // DELETE (GET)
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Narudzbas/Create
+        // Otvara formu za kreiranje nove narudžbe
+        public IActionResult Create()
         {
-            if (id == null) return NotFound();
-
-            var narudzba = await _context.Narudzbe
-                .Include(n => n.Korisnik)
-                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
-
-            if (narudzba == null) return NotFound();
-
-            return View(narudzba);
+            ViewBag.TrenutniDatum = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
+            return View();
         }
 
-        // DELETE (POST)
-        [HttpPost, ActionName("Delete")]
+        // POST: Narudzbas/Create
+        // Izvršava se kada klikneš na plavo dugme "Potvrdi i kreiraj narudžbu"
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> Create(DateTime datumPreuzimanja, string nacinPreuzimanjaStr)
         {
-            var narudzba = await _context.Narudzbe.FindAsync(id);
+            try
+            {
+                // Usklađivanje sa Enumom iz baze podataka: LICNO_PREUZIMANJE ili DOSTAVA
+                NacinPreuzimanja nacin = nacinPreuzimanjaStr == "DOSTAVA" ? NacinPreuzimanja.DOSTAVA : NacinPreuzimanja.LICNO_PREUZIMANJE;
 
-            if (narudzba != null)
-                _context.Narudzbe.Remove(narudzba);
+                // 1. KORAK: Pokušavamo dohvatiti ID trenutno logovanog korisnika iz sesije (Identity)
+                string trenutniKorisnikIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                int stvarniKorisnikId = 0;
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+                if (!string.IsNullOrEmpty(trenutniKorisnikIdStr))
+                {
+                    int.TryParse(trenutniKorisnikIdStr, out stvarniKorisnikId);
+                }
 
-        private bool NarudzbaExists(int id)
-        {
-            return _context.Narudzbe.Any(e => e.NarudzbaID == id);
+                // 2. KORAK: Ako sesija nije pronađena, tražimo korisnika preko emaila koji je na ekranu
+                if (stvarniKorisnikId == 0)
+                {
+                    var korisnikPoEmailu = await _context.Users.FirstOrDefaultAsync(u => u.Email == "amerdzanic1@etf.unsa.ba");
+                    if (korisnikPoEmailu != null)
+                    {
+                        stvarniKorisnikId = korisnikPoEmailu.Id;
+                    }
+                    else
+                    {
+                        // 3. KORAK: Sigurnosni korak - ako nema tog emaila, uzmi prvog bilo kojeg korisnika iz baze
+                        var biloKojiKorisnik = await _context.Users.FirstOrDefaultAsync();
+                        if (biloKojiKorisnik != null)
+                        {
+                            stvarniKorisnikId = biloKojiKorisnik.Id;
+                        }
+                        else
+                        {
+                            return Content("Greška: Tabela sa korisnicima (Users) je potpuno prazna u bazi!");
+                        }
+                    }
+                }
+
+                // Kreiramo objekat narudžbe sa ispravnim podacima i validnim KorisnikID-om
+                var novaNarudzba = new Narudzba
+                {
+                    KorisnikID = stvarniKorisnikId,
+                    DatumNarudzbe = DateTime.SpecifyKind(DateTime.Now, DateTimeKind.Utc),
+                    DatumPreuzimanja = DateTime.SpecifyKind(datumPreuzimanja, DateTimeKind.Utc),
+                    NacinPreuzimanja = nacin,
+                    Status = StatusNarudzbe.KREIRANA,
+                    UkupnaCijena = 0,
+                    KoeficijentSlozenosti = 1.0
+                };
+
+                // Dodavanje i spašavanje u PostgreSQL bazu podataka
+                _context.Narudzbe.Add(novaNarudzba);
+                await _context.SaveChangesAsync();
+
+                // POPRAVAK: Umjesto ispisa teksta ili greške, ovaj kod te automatski vraća na listu narudžbi!
+                return RedirectToAction(nameof(Index));
+            }
+            catch (Exception ex)
+            {
+                return Content($"Greška prilikom kreiranja narudžbe: {ex.Message} -> {ex.InnerException?.Message}");
+            }
         }
     }
 }

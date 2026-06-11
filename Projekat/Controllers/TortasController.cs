@@ -1,157 +1,134 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using BentoLab.Data;
-using BentoLab.Models;
 
 namespace BentoLab.Controllers
 {
-    public class TortasController : Controller
+    public class TortaController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public TortasController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
-        // GET: Tortas
-        public async Task<IActionResult> Index()
-        {
-            return View(await _context.Torta.ToListAsync());
-        }
-
-        // GET: Tortas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var torta = await _context.Torta
-                .FirstOrDefaultAsync(m => m.TortaID == id);
-            if (torta == null)
-            {
-                return NotFound();
-            }
-
-            return View(torta);
-        }
-
-        // GET: Tortas/Create
-        public IActionResult Create()
+        public IActionResult Index()
         {
             return View();
         }
 
-        // POST: Tortas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        public IActionResult Cjenovnik()
+        {
+            return View();
+        }
+
+        public IActionResult Galerija()
+        {
+            return View();
+        }
+
+        // KLJUČNI POPRAVAK: Čim korisnik klikne da pravi NOVU tortu ispočetka,
+        // čistimo zaostale torte od prošlog puta. Tako aplikacija kreće od nule!
+        public IActionResult Kreiraj()
+        {
+            // Čistimo stare torte iz TempData čim korisnik pokrene proces izrade nove torte
+            TempData["NazivKreiraneTorte"] = null;
+            TempData["CijenaKreiraneTorte"] = null;
+
+            return View();
+        }
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TortaID,Naziv,Cijena,KolicinaNaStanju,Dostupna")] Torta torta)
+        public IActionResult Kreiraj(string okus, string oblik, string boja)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(torta);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(torta);
+            TempData["IzabraniOkus"] = okus;
+            TempData["IzabraniOblik"] = oblik;
+            TempData["IzabranaBoja"] = boja;
+            return RedirectToAction(nameof(Dekoracija));
         }
 
-        // GET: Tortas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Dekoracija()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var torta = await _context.Torta.FindAsync(id);
-            if (torta == null)
-            {
-                return NotFound();
-            }
-            return View(torta);
+            TempData.Keep("IzabraniOkus");
+            TempData.Keep("IzabraniOblik");
+            TempData.Keep("IzabranaBoja");
+            return View();
         }
 
-        // POST: Tortas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TortaID,Cijena,Naziv,KolicinaNaStanju,Dostupna")] Torta torta)
+        public IActionResult Dekoracija(List<string> ukrasi, string slag, string dodaci, string napomena)
         {
-            if (id != torta.TortaID)
-            {
-                return NotFound();
-            }
+            string okus = TempData["IzabraniOkus"]?.ToString() ?? "Bueno";
+            string oblik = TempData["IzabraniOblik"]?.ToString() ?? "Krug";
+            string boja = TempData["IzabranaBoja"]?.ToString() ?? "Preporuka slastičara";
 
-            if (ModelState.IsValid)
+            TempData["IzabraniUkrasi"] = ukrasi != null && ukrasi.Any() ? string.Join(", ", ukrasi) : "Nema ukrasa";
+            TempData["IzabraniSlag"] = !string.IsNullOrEmpty(slag) ? slag : "Ništa";
+            TempData["IzabraniDodaci"] = !string.IsNullOrEmpty(dodaci) ? dodaci : "Ništa od ponuđenog";
+            TempData["Napomena"] = napomena;
+
+            double osnovnaCijena = 20.0;
+            if (okus == "Bueno" || okus == "Nutella") osnovnaCijena = 22.0;
+            else if (okus == "Raffaelo") osnovnaCijena = 23.0;
+            else if (okus == "Berry pistachio") osnovnaCijena = 25.0;
+
+            double dodatnaCijena = 0;
+            if (ukrasi != null)
             {
-                try
+                foreach (var ukras in ukrasi)
                 {
-                    _context.Update(torta);
-                    await _context.SaveChangesAsync();
+                    if (ukras == "Perlice" || ukras == "Šljokice") dodatnaCijena += 1.0;
+                    else if (ukras == "Cvijeće") dodatnaCijena += 2.0;
+                    else if (ukras == "Mašnice") dodatnaCijena += 3.0;
+                    else if (ukras == "Figurica") dodatnaCijena += 5.0;
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TortaExists(torta.TortaID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
             }
-            return View(torta);
+            if (slag != "Ništa" && !string.IsNullOrEmpty(slag)) dodatnaCijena += 1.0;
+            if (dodaci != "Ništa od ponuđenog" && !string.IsNullOrEmpty(dodaci)) dodatnaCijena += 1.0;
+
+            double koeficijent = 1.25;
+            double konacnaCijena = (osnovnaCijena + dodatnaCijena) * koeficijent;
+
+            TempData["OsnovnaCijena"] = osnovnaCijena.ToString("F2", CultureInfo.InvariantCulture);
+            TempData["DodatnoCijena"] = dodatnaCijena.ToString("F2", CultureInfo.InvariantCulture);
+            TempData["Koeficijent"] = koeficijent.ToString("F2", CultureInfo.InvariantCulture);
+            TempData["UkupnaCijenaKonacna"] = konacnaCijena.ToString("F2", CultureInfo.InvariantCulture);
+
+            TempData.Keep();
+            return RedirectToAction(nameof(Procjena));
         }
 
-        // GET: Tortas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Procjena()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var torta = await _context.Torta
-                .FirstOrDefaultAsync(m => m.TortaID == id);
-            if (torta == null)
-            {
-                return NotFound();
-            }
-
-            return View(torta);
+            TempData.Keep();
+            return View();
         }
 
-        // POST: Tortas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        // Vraćeno na stabilni TempData sistem koji sigurno radi na klik!
+        [HttpPost]
+        public IActionResult DodajUKorpu()
         {
-            var torta = await _context.Torta.FindAsync(id);
-            if (torta != null)
-            {
-                _context.Torta.Remove(torta);
-            }
+            string okus = TempData["IzabraniOkus"]?.ToString() ?? "Custom";
+            string oblik = TempData["IzabraniOblik"]?.ToString() ?? "Krug";
+            string cijenaKonacna = TempData["UkupnaCijenaKonacna"]?.ToString() ?? "25.00";
+            string dinamickiNazivTorte = $"{okus} bento cake ({oblik})";
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            List<string> naziviLista = TempData["NazivKreiraneTorte"] as string[] != null
+                ? (TempData["NazivKreiraneTorte"] as string[]).ToList()
+                : new List<string>();
 
-        private bool TortaExists(int id)
-        {
-            return _context.Torta.Any(e => e.TortaID == id);
+            List<string> cijeneLista = TempData["CijenaKreiraneTorte"] as string[] != null
+                ? (TempData["CijenaKreiraneTorte"] as string[]).ToList()
+                : new List<string>();
+
+            naziviLista.Add(dinamickiNazivTorte);
+
+            double parsiranaCijena = double.Parse(cijenaKonacna, CultureInfo.InvariantCulture);
+            cijeneLista.Add(parsiranaCijena.ToString("0.00", CultureInfo.InvariantCulture));
+
+            TempData["NazivKreiraneTorte"] = naziviLista.ToArray();
+            TempData["CijenaKreiraneTorte"] = cijeneLista.ToArray();
+
+            TempData.Keep("NazivKreiraneTorte");
+            TempData.Keep("CijenaKreiraneTorte");
+
+            return RedirectToAction("Index", "Korpas");
         }
     }
 }

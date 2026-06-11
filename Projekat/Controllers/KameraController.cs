@@ -1,0 +1,73 @@
+﻿using System;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
+
+namespace BentoLab.Controllers
+{
+    public class KameraController : Controller
+    {
+        private readonly IWebHostEnvironment _hostingEnvironment;
+
+        // Konstruktor za pristup wwwroot folderu
+        public KameraController(IWebHostEnvironment hostingEnvironment)
+        {
+            _hostingEnvironment = hostingEnvironment;
+        }
+
+        // Početni ekran za slastičara
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        // Ekran koji pali kameru za određenu narudžbu
+        // Pristup u browseru: /Kamera/UslikajBento?narudzbaId=1
+        public IActionResult UslikajBento(int narudzbaId)
+        {
+            ViewBag.NarudzbaId = narudzbaId;
+            return View();
+        }
+
+        // Metoda koja prihvata uslikanu sliku i spašava je
+        [HttpPost]
+        public IActionResult SpasiSliku(string base64Image, int narudzbaId)
+        {
+            if (string.IsNullOrEmpty(base64Image))
+            {
+                return BadRequest("Slikanje nije uspjelo.");
+            }
+
+            // 1. Dekodiranje i spašavanje slike na disk (Tvoj postojeći kod)
+            var cistaSlika = base64Image.Replace("data:image/jpeg;base64,", "");
+            byte[] bajtoviSlike = Convert.FromBase64String(cistaSlika);
+
+            string folderPutanja = Path.Combine(_hostingEnvironment.WebRootPath, "slike_torta");
+            if (!Directory.Exists(folderPutanja))
+            {
+                Directory.CreateDirectory(folderPutanja);
+            }
+
+            string imeFajla = $"bento_narudzba_{narudzbaId}.jpg";
+            string kompletnaPutanja = Path.Combine(folderPutanja, imeFajla);
+            System.IO.File.WriteAllBytes(kompletnaPutanja, bajtoviSlike);
+
+            // Relativna putanja koju spremamo u bazu i šaljemo servisu
+            string putanjaZaMail = "/slike_torta/" + imeFajla;
+
+            // TODO: U pravoj aplikaciji ovdje iz baze izvučete stvarni mail kupca za ovu narudžbu
+            // npr. var narudzba = _context.Narudzbe.Find(narudzbaId);
+            // string emailKupca = narudzba.EmailKupca;
+
+            // Za potrebe testiranja i odbrane na faksu, ovdje ćemo staviti testni mail:
+            string emailKupca = "kupac.test@gmail.com";
+            string testniBrojNarudzbe = "CK-0847";
+
+            // 2. AUTOMATSKO OKIDANJE MAILA SA SLIKOM!
+            EmailService.PosaljiObavjestenje(emailKupca, testniBrojNarudzbe, "Spremno za preuzimanje", putanjaZaMail);
+
+            TempData["Poruka"] = "Uspješno uslikana bento torta i poslana obavijest sa slikom na e-mail!";
+            return RedirectToAction(nameof(Index));
+        }
+    }
+}

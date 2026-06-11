@@ -1,46 +1,74 @@
-﻿@model IEnumerable<BentoLab.Models.Korpa>
+﻿@{
+    ViewData["Title"] = "Vaša Korpa";
 
-@{
-    ViewData["Title"] = "Korpe";
+    // Povlačimo nizove torti iz TempData memorije
+    string[] naziviTorti = TempData["NazivKreiraneTorte"] as string[];
+    string[] cijeneTorti = TempData["CijenaKreiraneTorte"] as string[];
+
+    // Drži podatke aktivnim u slučaju da korisnik uradi Refresh stranice
+    TempData.Keep("NazivKreiraneTorte");
+    TempData.Keep("CijenaKreiraneTorte");
+
+    double ukupniZbirZaUplatu = 0;
 }
 
-<h1>Korpe korisnika</h1>
+<div class="container mt-4" style="max-width: 850px; background-color: #f7ede2; padding: 30px; border-radius: 15px;">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 style="color: #bc6c25; font-weight: bold; margin: 0;">🛒 Vaša Korpa</h2>
+        <a asp-controller="Torta" asp-action="Index" class="btn btn-outline-secondary btn-sm" style="border-radius: 8px;">+ Dodaj još proizvoda</a>
+    </div>
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">Kreiraj novu korpu</a>
-</p>
-
-@if (!Model.Any())
-{
-    <p>Trenutno nema kreiranih korpi.</p>
-}
-else
-{
-    <table class="table">
-        <thead>
+    <table class="table table-bordered bg-white text-center align-middle shadow-sm overflow-hidden" style="border-radius: 10px;">
+        <thead style="background-color: #3d405b; color: white;">
             <tr>
-                <th>ID korpe</th>
-                <th>Datum kreiranja</th>
-                <th>Korisnik</th>
-                <th>Akcije</th>
+                <th>Naziv proizvoda</th>
+                <th>Cijena</th>
+                <th>Količina</th>
+                <th>Ukupno</th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model)
+            @if (naziviTorti != null && naziviTorti.Length > 0 && !string.IsNullOrEmpty(naziviTorti[0]))
+            {
+                // Prolazimo kroz sve torte koje su skupljene u listi
+                for (int i = 0; i < naziviTorti.Length; i++)
+                {
+                    // OSIGURANJE OD HILJADA MARAKA: Čitamo cijenu tačno onako kako je zapisana u kontroleru
+                    double trenutnaCijena = double.Parse(cijeneTorti[i], System.Globalization.CultureInfo.InvariantCulture);
+                    ukupniZbirZaUplatu += trenutnaCijena;
+
+                    <tr>
+                        <td class="fw-bold text-start ps-3" style="color: #3d405b;">🎂 @naziviTorti[i]</td>
+                        <td class="fw-bold">@trenutnaCijena.ToString("0.00") KM</td>
+                        <td>
+                            <span class="badge bg-light text-dark p-2 border">1 kom</span>
+                        </td>
+                        <td class="fw-bold" style="color: #e07a5f; font-size: 18px;">@trenutnaCijena.ToString("0.00") KM</td>
+                    </tr>
+                }
+            }
+            else
             {
                 <tr>
-                    <td>@item.KorpaID</td>
-                    <td>@item.DatumKreiranja.ToString("dd.MM.yyyy")</td>
-                    <td>@item.KorisnikID</td>
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.KorpaID">Detalji</a> |
-                        <a asp-action="Edit" asp-route-id="@item.KorpaID">Uredi</a> |
-                        <a asp-action="Delete" asp-route-id="@item.KorpaID">Obriši</a>
-                    </td>
+                    <td colspan="4" class="text-muted py-5 fs-5">Vaša korpa je trenutno prazna.</td>
                 </tr>
             }
         </tbody>
     </table>
 
-    <h5>Ukupan broj korpi: @Model.Count()</h5>
-}
+    @if (naziviTorti != null && naziviTorti.Length > 0 && !string.IsNullOrEmpty(naziviTorti[0]))
+    {
+        <div class="d-flex justify-content-end mb-4">
+            <div class="p-3 bg-white text-end shadow-sm" style="border-radius: 10px; min-width: 250px; border: 1px solid #dda15e;">
+                <span class="text-muted">Ukupno za uplatu:</span>
+                <h3 class="fw-bold" style="color: #e07a5f; margin: 0;">@ukupniZbirZaUplatu.ToString("0.00") KM</h3>
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+            <a asp-controller="Korpas" asp-action="Create" class="btn btn-lg px-5 text-white shadow fw-bold" style="background-color: #bc6c25; border-radius: 10px;">
+                ✓ Nastavi na plaćanje &rarr;
+            </a>
+        </div>
+    }
+</div>

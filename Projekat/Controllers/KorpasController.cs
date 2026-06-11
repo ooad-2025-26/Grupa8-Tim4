@@ -1,172 +1,120 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
-using BentoLab.Data;
-using BentoLab.Models;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace BentoLab.Controllers
 {
     public class KorpasController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public KorpasController(ApplicationDbContext context)
+        // 1. PRIKAZ KORPE SA ARTIKLIMA
+        public IActionResult Index()
         {
-            _context = context;
-        }
-
-        // GET: Korpas
-        public async Task<IActionResult> Index()
-        {
-            var applicationDbContext = _context.Korpe.Include(k => k.Korisnik);
-            return View(await applicationDbContext.ToListAsync());
-        }
-
-        // GET: Korpas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var korpa = await _context.Korpe
-                .Include(k => k.Korisnik)
-                .FirstOrDefaultAsync(m => m.KorpaID == id);
-            if (korpa == null)
-            {
-                return NotFound();
-            }
-
-            return View(korpa);
-        }
-
-        // GET: Korpas/Create
-        public IActionResult Create()
-        {
-            ViewBag.KorisnikID = new SelectList(_context.Korisnik.ToList(), "Id", "ImePrezime");
+            TempData.Keep("NazivKreiraneTorte");
+            TempData.Keep("CijenaKreiraneTorte");
             return View();
         }
 
-        // POST: Korpas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("KorpaID,DatumKreiranja,KorisnikID")] Korpa korpa)
+        // 2. EKRAN ZA ODABIR DOSTAVE
+        public IActionResult Create()
         {
-            ModelState.Remove("Korisnik");
-
-            if (korpa.DatumKreiranja == default)
-                korpa.DatumKreiranja = DateTime.UtcNow;
-            else
-                korpa.DatumKreiranja = DateTime.SpecifyKind(korpa.DatumKreiranja, DateTimeKind.Utc);
-
-            if (ModelState.IsValid)
+            string[] cijene = TempData["CijenaKreiraneTorte"] as string[];
+            double medjuzbir = 0;
+            if (cijene != null)
             {
-                _context.Add(korpa);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-
-            ViewBag.KorisnikID = new SelectList(_context.Korisnik.ToList(), "Id", "ImePrezime", korpa.KorisnikID);
-            return View(korpa);
-        }
-
-        // GET: Korpas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var korpa = await _context.Korpe.FindAsync(id);
-            if (korpa == null)
-            {
-                return NotFound();
-            }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", korpa.KorisnikID);
-            return View(korpa);
-        }
-
-        // POST: Korpas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("KorpaID,DatumKreiranja,KorisnikID")] Korpa korpa)
-        {
-            if (id != korpa.KorpaID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                foreach (var c in cijene)
                 {
-                    _context.Update(korpa);
-                    await _context.SaveChangesAsync();
+                    medjuzbir += double.Parse(c, CultureInfo.InvariantCulture);
                 }
-                catch (DbUpdateConcurrencyException)
+            }
+
+            ViewBag.Medjuzbir = medjuzbir.ToString("F2", CultureInfo.InvariantCulture);
+
+            TempData.Keep("NazivKreiraneTorte");
+            TempData.Keep("CijenaKreiraneTorte");
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult ProcesirajPreuzimanje(string nacinPreuzimanja, string emailKupca)
+        {
+            if (nacinPreuzimanja == "Dostava")
+            {
+                // Ako ide na dostavu, možemo proslijediti mail dalje preko TempData da ga ne kuca dvaput
+                TempData["EmailKupcaDostava"] = emailKupca;
+                return RedirectToAction(nameof(Dostava));
+            }
+
+            // Ako je lično preuzimanje, odmah šaljemo mail jer imamo string emailKupca!
+            var stavke = PreuzmiIocistiKorpu(TempData);
+            string brojNarudzbe = "CK-" + new Random().Next(1000, 9999);
+
+            if (!string.IsNullOrEmpty(emailKupca))
+            {
+                EmailService.PosaljiObavjestenje(emailKupca, brojNarudzbe, "Zaprimljeno (Lično preuzimanje)");
+            }
+
+            return RedirectToAction(nameof(Uspjeh));
+        }
+
+        // 3. EKRAN ZA POPUNJAVANJE PODATAKA O DOSTAVI
+        public IActionResult Dostava()
+        {
+            TempData.Keep("NazivKreiraneTorte");
+            TempData.Keep("CijenaKreiraneTorte");
+            return View();
+        }
+        [HttpPost]
+        public IActionResult PotvrdiDostavu(string ime, string adresa, string grad, string telefon, string napomena, string emailKupca)
+        {
+            // Tvoj postojeći kod koji spašava narudžbu...
+            var stavke = PreuzmiIocistiKorpu(TempData);
+
+            // OVDJE OKIDAMO MAILTRAP:
+            if (!string.IsNullOrEmpty(emailKupca))
+            {
+                EmailService.PosaljiObavjestenje(emailKupca, "CK-0847", "Zaprimljeno");
+            }
+
+            return RedirectToAction("Uspjeh");
+        }
+
+        // 4. EKRAN USPJEŠNE NARUDŽBE
+        public IActionResult Uspjeh()
+        {
+            return View();
+        }
+
+        // ČISTA STATIČKA METODA ZA UPIS U BAZU I ČIŠĆENJE
+        public static List<dynamic> PreuzmiIocistiKorpu(ITempDataDictionary tempData)
+        {
+            var listaStavki = new List<dynamic>();
+
+            if (tempData != null)
+            {
+                string[] nazivi = tempData["NazivKreiraneTorte"] as string[];
+                string[] cijene = tempData["CijenaKreiraneTorte"] as string[];
+
+                if (nazivi != null && cijene != null)
                 {
-                    if (!KorpaExists(korpa.KorpaID))
+                    for (int i = 0; i < nazivi.Length; i++)
                     {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
+                        listaStavki.Add(new
+                        {
+                            NazivZaBazu = nazivi[i],
+                            CijenaZaBazu = decimal.Parse(cijene[i], CultureInfo.InvariantCulture)
+                        });
                     }
                 }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", korpa.KorisnikID);
-            return View(korpa);
-        }
 
-        // GET: Korpas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
+                // Brišemo TempData tek kad je narudžba uspješno završena i poslana bazi
+                tempData.Remove("NazivKreiraneTorte");
+                tempData.Remove("CijenaKreiraneTorte");
             }
 
-            var korpa = await _context.Korpe
-                .Include(k => k.Korisnik)
-                .FirstOrDefaultAsync(m => m.KorpaID == id);
-            if (korpa == null)
-            {
-                return NotFound();
-            }
-
-            return View(korpa);
-        }
-
-        // POST: Korpas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var korpa = await _context.Korpe.FindAsync(id);
-            if (korpa != null)
-            {
-                _context.Korpe.Remove(korpa);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool KorpaExists(int id)
-        {
-            return _context.Korpe.Any(e => e.KorpaID == id);
+            return listaStavki;
         }
     }
 }

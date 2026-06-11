@@ -1,47 +1,21 @@
-﻿@model IEnumerable<BentoLab.Models.Torta>
-
-@{
-    ViewData["Title"] = "Index";
+﻿@{
+    ViewData["Title"] = "Izbor Akcije";
 }
 
-<h1>Index</h1>
+<div class="container text-center mt-5" style="background-color: #f7ede2; padding: 40px; border-radius: 15px; max-width: 800px;">
+    <h2 class="mb-5" style="color: #bc6c25; font-weight: bold;">🎂 Naša Ponuda Bento Torti 🎂</h2>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Naziv)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KolicinaNaStanju)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Dostupna)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Naziv)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KolicinaNaStanju)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Dostupna)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.TortaID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TortaID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TortaID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="d-grid gap-4 col-8 mx-auto">
+        <a asp-controller="Torta" asp-action="Kreiraj" class="btn btn-lg shadow-sm" style="background-color: #dda15e; color: white; border: none; padding: 15px; font-size: 22px;">
+            🎂 Kreiraj tortu
+        </a>
+
+        <a asp-controller="Torta" asp-action="Galerija" class="btn btn-lg shadow-sm" style="background-color: #faedcd; color: #d4a373; border: 1px solid #d4a373; padding: 15px; font-size: 22px;">
+            💡 Galerija ideja
+        </a>
+
+        <a asp-controller="Torta" asp-action="Cjenovnik" class="btn btn-lg shadow-sm" style="background-color: #dda15e; color: white; border: none; padding: 15px; font-size: 22px;">
+            📋 Pregledaj cjenovnik
+        </a>
+    </div>
+</div>
