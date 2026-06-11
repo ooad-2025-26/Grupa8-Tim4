@@ -25,6 +25,8 @@ namespace BentoLab.Models
 
         public Korisnik()
         {
+            ImePrezime = "Registrovani korisnik";
+            Uloga = Uloga.KUPAC;
         }
     }
 }

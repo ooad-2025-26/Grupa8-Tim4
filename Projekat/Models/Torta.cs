@@ -9,6 +9,8 @@ namespace BentoLab.Models
 
         public string Naziv { get; set; }
 
+        public double Cijena { get; set; }
+
         public int KolicinaNaStanju { get; set; }
 
         public bool Dostupna { get; set; }

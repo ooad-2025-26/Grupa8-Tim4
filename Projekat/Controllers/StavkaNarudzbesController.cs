@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -19,146 +17,162 @@ namespace BentoLab.Controllers
             _context = context;
         }
 
-        // GET: StavkaNarudzbes
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.StavkeNarudzbe.Include(s => s.Narudzba).Include(s => s.Torta);
-            return View(await applicationDbContext.ToListAsync());
+            var stavke = _context.StavkeNarudzbe
+            .Include(s => s.Narudzba)
+            .Include(s => s.Torta);
+
+            return View(await stavke.ToListAsync());
         }
 
-        // GET: StavkaNarudzbes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var stavkaNarudzbe = await _context.StavkeNarudzbe
-                .Include(s => s.Narudzba)
-                .Include(s => s.Torta)
-                .FirstOrDefaultAsync(m => m.StavkaID == id);
-            if (stavkaNarudzbe == null)
-            {
-                return NotFound();
-            }
+            .Include(s => s.Narudzba)
+            .Include(s => s.Torta)
+            .FirstOrDefaultAsync(m => m.StavkaID == id);
+
+            if (stavkaNarudzbe == null) return NotFound();
 
             return View(stavkaNarudzbe);
         }
 
-        // GET: StavkaNarudzbes/Create
         public IActionResult Create()
         {
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID");
-            ViewData["TortaID"] = new SelectList(_context.Torta, "TortaID", "TortaID");
-            return View();
+            ViewBag.TortaID = new SelectList(_context.Torta, "TortaID", "Naziv");
+            return View(new StavkaNarudzbe { Kolicina = 1 });
         }
 
-        // POST: StavkaNarudzbes/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("StavkaID,Kolicina,CijenaStavke,NarudzbaID,TortaID")] StavkaNarudzbe stavkaNarudzbe)
+        public async Task<IActionResult> Create([Bind("StavkaID,Kolicina,TortaID")] StavkaNarudzbe stavkaNarudzbe)
         {
+            ModelState.Remove("Narudzba");
+            ModelState.Remove("Torta");
+
+            var narudzba = await _context.Narudzbe
+            .OrderByDescending(n => n.NarudzbaID)
+            .FirstOrDefaultAsync();
+
+            if (narudzba == null)
+                return RedirectToAction("Create", "Narudzbas");
+
+            stavkaNarudzbe.NarudzbaID = narudzba.NarudzbaID;
+
+            var torta = await _context.Torta.FindAsync(stavkaNarudzbe.TortaID);
+
+            if (torta == null)
+                return NotFound();
+
+            stavkaNarudzbe.CijenaStavke = torta.Cijena;
+
             if (ModelState.IsValid)
             {
                 _context.Add(stavkaNarudzbe);
                 await _context.SaveChangesAsync();
+
+                narudzba.UkupnaCijena = await _context.StavkeNarudzbe
+                .Where(s => s.NarudzbaID == narudzba.NarudzbaID)
+                .SumAsync(s => s.Kolicina * s.CijenaStavke);
+
+                await _context.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", stavkaNarudzbe.NarudzbaID);
-            ViewData["TortaID"] = new SelectList(_context.Torta, "TortaID", "TortaID", stavkaNarudzbe.TortaID);
+
+            ViewBag.TortaID = new SelectList(_context.Torta, "TortaID", "Naziv", stavkaNarudzbe.TortaID);
             return View(stavkaNarudzbe);
         }
 
-        // GET: StavkaNarudzbes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var stavkaNarudzbe = await _context.StavkeNarudzbe.FindAsync(id);
-            if (stavkaNarudzbe == null)
-            {
-                return NotFound();
-            }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", stavkaNarudzbe.NarudzbaID);
-            ViewData["TortaID"] = new SelectList(_context.Torta, "TortaID", "TortaID", stavkaNarudzbe.TortaID);
+            if (stavkaNarudzbe == null) return NotFound();
+
+            ViewBag.TortaID = new SelectList(_context.Torta, "TortaID", "Naziv", stavkaNarudzbe.TortaID);
             return View(stavkaNarudzbe);
         }
 
-        // POST: StavkaNarudzbes/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("StavkaID,Kolicina,CijenaStavke,NarudzbaID,TortaID")] StavkaNarudzbe stavkaNarudzbe)
+        public async Task<IActionResult> Edit(int id, [Bind("StavkaID,Kolicina,NarudzbaID,TortaID")] StavkaNarudzbe stavkaNarudzbe)
         {
-            if (id != stavkaNarudzbe.StavkaID)
-            {
-                return NotFound();
-            }
+            if (id != stavkaNarudzbe.StavkaID) return NotFound();
+
+            ModelState.Remove("Narudzba");
+            ModelState.Remove("Torta");
+
+            var torta = await _context.Torta.FindAsync(stavkaNarudzbe.TortaID);
+            if (torta == null) return NotFound();
+
+            stavkaNarudzbe.CijenaStavke = torta.Cijena;
 
             if (ModelState.IsValid)
             {
-                try
+                _context.Update(stavkaNarudzbe);
+                await _context.SaveChangesAsync();
+
+                var narudzba = await _context.Narudzbe.FindAsync(stavkaNarudzbe.NarudzbaID);
+                if (narudzba != null)
                 {
-                    _context.Update(stavkaNarudzbe);
+                    narudzba.UkupnaCijena = await _context.StavkeNarudzbe
+                    .Where(s => s.NarudzbaID == narudzba.NarudzbaID)
+                    .SumAsync(s => s.Kolicina * s.CijenaStavke);
+
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!StavkaNarudzbeExists(stavkaNarudzbe.StavkaID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", stavkaNarudzbe.NarudzbaID);
-            ViewData["TortaID"] = new SelectList(_context.Torta, "TortaID", "TortaID", stavkaNarudzbe.TortaID);
+
+            ViewBag.TortaID = new SelectList(_context.Torta, "TortaID", "Naziv", stavkaNarudzbe.TortaID);
             return View(stavkaNarudzbe);
         }
 
-        // GET: StavkaNarudzbes/Delete/5
+
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var stavkaNarudzbe = await _context.StavkeNarudzbe
-                .Include(s => s.Narudzba)
-                .Include(s => s.Torta)
-                .FirstOrDefaultAsync(m => m.StavkaID == id);
-            if (stavkaNarudzbe == null)
-            {
-                return NotFound();
-            }
+            .Include(s => s.Narudzba)
+            .Include(s => s.Torta)
+            .FirstOrDefaultAsync(m => m.StavkaID == id);
+
+            if (stavkaNarudzbe == null) return NotFound();
 
             return View(stavkaNarudzbe);
         }
 
-        // POST: StavkaNarudzbes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var stavkaNarudzbe = await _context.StavkeNarudzbe.FindAsync(id);
+
             if (stavkaNarudzbe != null)
             {
+                int narudzbaId = stavkaNarudzbe.NarudzbaID;
+
                 _context.StavkeNarudzbe.Remove(stavkaNarudzbe);
+                await _context.SaveChangesAsync();
+
+                var narudzba = await _context.Narudzbe.FindAsync(narudzbaId);
+                if (narudzba != null)
+                {
+                    narudzba.UkupnaCijena = await _context.StavkeNarudzbe
+                    .Where(s => s.NarudzbaID == narudzbaId)
+                    .SumAsync(s => s.Kolicina * s.CijenaStavke);
+
+                    await _context.SaveChangesAsync();
+                }
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

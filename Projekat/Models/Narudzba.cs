@@ -18,6 +18,7 @@ namespace BentoLab.Models
 
         public DateTime DatumNarudzbe { get; set; }
 
+        public DateTime DatumPreuzimanja { get; set; }
         public NacinPreuzimanja NacinPreuzimanja { get; set; }
 
         public int KorisnikID { get; set; }

@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\stavkanarudzbes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\korpas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\korpas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\stavkanarudzbes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\models\\stavkanarudzbe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\models\\stavkanarudzbe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\models\\torta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\models\\torta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\stavkanarudzbes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\controllers\\stavkanarudzbescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\stavkanarudzbescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\controllers\\korpascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\korpascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\models\\korpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\models\\korpa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\controllers\\tortascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\tortascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\tortas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\tortas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\stavkanarudzbes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\models\\torta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\models\\torta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\tortas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\tortas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,110 +55,136 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Details.cshtml",
-              "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Details.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Details.cshtml",
-              "RelativeToolTip": "Projekat\\Views\\StavkaNarudzbes\\Details.cshtml",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAwDYAAAAAAAAAAAAAAA==",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-09T19:58:16.766Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Korpas\\Index.cshtml",
-              "RelativeDocumentMoniker": "Projekat\\Views\\Korpas\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Korpas\\Index.cshtml",
-              "RelativeToolTip": "Projekat\\Views\\Korpas\\Index.cshtml",
-              "ViewState": "AgIAABwAAAAAAAAAAAAmwC4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-09T19:53:44.282Z",
+              "WhenOpened": "2026-06-11T03:26:30.429Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Index.cshtml",
-              "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Index.cshtml",
-              "RelativeToolTip": "Projekat\\Views\\StavkaNarudzbes\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Narudzbas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Narudzbas\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Narudzbas\\Edit.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Narudzbas\\Edit.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAwC8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-09T19:41:15.265Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Torta.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Torta.cs",
-              "RelativeDocumentMoniker": "Projekat\\Models\\Torta.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Torta.cs",
-              "RelativeToolTip": "Projekat\\Models\\Torta.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T19:40:04.086Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "StavkaNarudzbesController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\StavkaNarudzbesController.cs",
-              "RelativeDocumentMoniker": "Projekat\\Controllers\\StavkaNarudzbesController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\StavkaNarudzbesController.cs",
-              "RelativeToolTip": "Projekat\\Controllers\\StavkaNarudzbesController.cs",
-              "ViewState": "AgIAAJMAAAAAAAAAAAAiwKQAAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T19:28:23.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "KorpasController.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\KorpasController.cs",
-              "RelativeDocumentMoniker": "Projekat\\Controllers\\KorpasController.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\KorpasController.cs",
-              "RelativeToolTip": "Projekat\\Controllers\\KorpasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T19:28:15.084Z",
+              "WhenOpened": "2026-06-11T03:22:13.213Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "StavkaNarudzbe.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\StavkaNarudzbe.cs",
-              "RelativeDocumentMoniker": "Projekat\\Models\\StavkaNarudzbe.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\StavkaNarudzbe.cs",
-              "RelativeToolTip": "Projekat\\Models\\StavkaNarudzbe.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAmwB4AAAABAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Program.cs",
+              "RelativeDocumentMoniker": "Projekat\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Program.cs",
+              "RelativeToolTip": "Projekat\\Program.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACkAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T19:26:58.554Z",
+              "WhenOpened": "2026-06-11T02:55:42.813Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TortasController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\TortasController.cs",
+              "RelativeDocumentMoniker": "Projekat\\Controllers\\TortasController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\TortasController.cs",
+              "RelativeToolTip": "Projekat\\Controllers\\TortasController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAuwJ0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T00:52:25.252Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Tortas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Tortas\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Tortas\\Edit.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Tortas\\Edit.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T00:36:50.043Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Tortas\\Create.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Tortas\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\Tortas\\Create.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Tortas\\Create.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T00:35:44.161Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Korpa.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Korpa.cs",
-              "RelativeDocumentMoniker": "Projekat\\Models\\Korpa.cs",
-              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Korpa.cs",
-              "RelativeToolTip": "Projekat\\Models\\Korpa.cs",
+              "Title": "Torta.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Torta.cs",
+              "RelativeDocumentMoniker": "Projekat\\Models\\Torta.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Models\\Torta.cs",
+              "RelativeToolTip": "Projekat\\Models\\Torta.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T00:31:31.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "StavkaNarudzbesController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\StavkaNarudzbesController.cs",
+              "RelativeDocumentMoniker": "Projekat\\Controllers\\StavkaNarudzbesController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Controllers\\StavkaNarudzbesController.cs",
+              "RelativeToolTip": "Projekat\\Controllers\\StavkaNarudzbesController.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAAAIcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T00:14:31.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20260611003332_DodanaCijenaTorte.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs",
+              "RelativeDocumentMoniker": "Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs",
+              "RelativeToolTip": "Projekat\\Migrations\\20260611003332_DodanaCijenaTorte.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-09T19:26:33.166Z",
+              "WhenOpened": "2026-06-11T00:33:32.456Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Create.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Create.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\StavkaNarudzbes\\Create.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAwCMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T00:28:21.246Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
             }
           ]
         }

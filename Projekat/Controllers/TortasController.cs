@@ -54,7 +54,7 @@ namespace BentoLab.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("TortaID,Naziv,KolicinaNaStanju,Dostupna")] Torta torta)
+        public async Task<IActionResult> Create([Bind("TortaID,Naziv,Cijena,KolicinaNaStanju,Dostupna")] Torta torta)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +86,7 @@ namespace BentoLab.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("TortaID,Naziv,KolicinaNaStanju,Dostupna")] Torta torta)
+        public async Task<IActionResult> Edit(int id, [Bind("TortaID,Cijena,Naziv,KolicinaNaStanju,Dostupna")] Torta torta)
         {
             if (id != torta.TortaID)
             {
