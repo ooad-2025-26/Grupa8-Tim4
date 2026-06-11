@@ -48,7 +48,7 @@ namespace BentoLab.Controllers
         // GET: Korpas/Create
         public IActionResult Create()
         {
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID");
+            ViewBag.KorisnikID = new SelectList(_context.Korisnik.ToList(), "Id", "ImePrezime");
             return View();
         }
 
@@ -59,13 +59,21 @@ namespace BentoLab.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("KorpaID,DatumKreiranja,KorisnikID")] Korpa korpa)
         {
+            ModelState.Remove("Korisnik");
+
+            if (korpa.DatumKreiranja == default)
+                korpa.DatumKreiranja = DateTime.UtcNow;
+            else
+                korpa.DatumKreiranja = DateTime.SpecifyKind(korpa.DatumKreiranja, DateTimeKind.Utc);
+
             if (ModelState.IsValid)
             {
                 _context.Add(korpa);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", korpa.KorisnikID);
+
+            ViewBag.KorisnikID = new SelectList(_context.Korisnik.ToList(), "Id", "ImePrezime", korpa.KorisnikID);
             return View(korpa);
         }
 

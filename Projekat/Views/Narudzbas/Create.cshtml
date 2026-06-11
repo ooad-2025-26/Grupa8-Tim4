@@ -1,9 +1,11 @@
 ﻿@model BentoLab.Models.Narudzba
+@using BentoLab.Models
 
 @{
     ViewData["Title"] = "Kreiranje narudžbe";
 }
 
+<<<<<<< HEAD
 <div class="container mt-4" style="max-width: 600px;">
     <div class="card shadow-sm">
         <div class="card-header bg-primary text-white text-center">
@@ -57,12 +59,38 @@
 
             </form>
         </div>
-    </div>
-</div>
+=======
+<h1>Create</h1>
+<h4>Narudzba</h4>
+<hr />
 
+<form asp-action="Create" method="post">
+
+    <div class="form-group">
+        <label asp-for="DatumPreuzimanja" class="control-label"></label>
+        <input asp-for="DatumPreuzimanja" class="form-control" type="datetime-local" />
+>>>>>>> iman
+    </div>
+
+<<<<<<< HEAD
 @section Scripts
 {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
+=======
+    <div class="form-group">
+        <label asp-for="NacinPreuzimanja"></label>
+        <select asp-for="NacinPreuzimanja" class="form-control">
+            <option value="LICNO_PREUZIMANJE">Lično preuzimanje</option>
+            <option value="DOSTAVA">Dostava</option>
+        </select>
+    </div>
+
+    <br />
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+<a asp-action="Index">Back to List</a>
+>>>>>>> iman

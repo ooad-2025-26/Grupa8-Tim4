@@ -4,6 +4,7 @@
     ViewData["Title"] = "Detalji narudžbe";
 }
 
+<<<<<<< HEAD
 <div class="container mt-4" style="max-width:700px;">
     <div class="card shadow-sm">
         <div class="card-header bg-dark text-white">
@@ -31,3 +32,58 @@
         </div>
     </div>
 </div>
+=======
+<h1>Detalji narudžbe</h1>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Ukupna cijena</dt>
+    <dd class="col-sm-9">@Model.UkupnaCijena KM</dd>
+
+    <dt class="col-sm-3">Status</dt>
+    <dd class="col-sm-9">@Model.Status</dd>
+
+    <dt class="col-sm-3">Datum narudžbe</dt>
+    <dd class="col-sm-9">@Model.DatumNarudzbe.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Datum preuzimanja</dt>
+    <dd class="col-sm-9">@Model.DatumPreuzimanja.ToString("dd.MM.yyyy HH:mm")</dd>
+
+    <dt class="col-sm-3">Način preuzimanja</dt>
+    <dd class="col-sm-9">@Model.NacinPreuzimanja</dd>
+
+    <dt class="col-sm-3">Korisnik</dt>
+    <dd class="col-sm-9">@Model.Korisnik?.Email</dd>
+</dl>
+
+@if (Model.Stavke != null && Model.Stavke.Any())
+{
+    <h4>Stavke narudžbe</h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Torta</th>
+                <th>Količina</th>
+                <th>Cijena</th>
+                <th>Ukupno</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var stavka in Model.Stavke)
+            {
+                <tr>
+                    <td>@stavka.Torta?.Naziv</td>
+                    <td>@stavka.Kolicina</td>
+                    <td>@stavka.CijenaStavke KM</td>
+                    <td>@(stavka.Kolicina * stavka.CijenaStavke) KM</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<a asp-action="Edit" asp-route-id="@Model.NarudzbaID">Uredi</a>
+|
+<a asp-action="Index">Nazad na listu</a>
+>>>>>>> iman

@@ -1,6 +1,7 @@
 ﻿@model IEnumerable<BentoLab.Models.Narudzba>
 
 @{
+<<<<<<< HEAD
     ViewData["Title"] = "Moje Narudžbe";
 }
 
@@ -55,3 +56,54 @@
         </div>
     }
 </div>
+=======
+    ViewData["Title"] = "Narudžbe";
+}
+
+<h1>Narudžbe</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Kreiraj novu narudžbu</a>
+</p>
+
+@if (!Model.Any())
+{
+    <p>Trenutno nema kreiranih narudžbi.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Ukupna cijena</th>
+                <th>Status</th>
+                <th>Datum narudžbe</th>
+                <th>Datum preuzimanja</th>
+                <th>Način preuzimanja</th>
+                <th>Korisnik</th>
+                <th>Akcije</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.UkupnaCijena KM</td>
+                    <td>@item.Status</td>
+                    <td>@item.DatumNarudzbe.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@item.DatumPreuzimanja.ToString("dd.MM.yyyy HH:mm")</td>
+                    <td>@item.NacinPreuzimanja</td>
+                    <td>@item.Korisnik?.Email</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.NarudzbaID">Uredi</a> |
+                        <a asp-action="Details" asp-route-id="@item.NarudzbaID">Detalji</a> |
+                        <a asp-action="Delete" asp-route-id="@item.NarudzbaID">Obriši</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h5>Ukupan broj narudžbi: @Model.Count()</h5>
+}
+>>>>>>> iman

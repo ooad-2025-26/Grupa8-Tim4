@@ -189,6 +189,9 @@ namespace BentoLab.Migrations
                     b.Property<DateTime>("DatumNarudzbe")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<DateTime>("DatumPreuzimanja")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<double>("KoeficijentSlozenosti")
                         .HasColumnType("double precision");
 
@@ -277,6 +280,9 @@ namespace BentoLab.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("TortaID"));
+
+                    b.Property<double>("Cijena")
+                        .HasColumnType("double precision");
 
                     b.Property<bool>("Dostupna")
                         .HasColumnType("boolean");
