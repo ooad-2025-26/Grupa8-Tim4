@@ -28,22 +28,7 @@
       },
       "publishAllPorts": true,
       "useSSL": true
-    },
-    "IIS Express": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
     }
   },
-  "$schema": "https://json.schemastore.org/launchsettings.json",
-  "iisSettings": {
-    "windowsAuthentication": false,
-    "anonymousAuthentication": true,
-    "iisExpress": {
-      "applicationUrl": "http://localhost:52183/",
-      "sslPort": 44328
-    }
-  }
+  "$schema": "https://json.schemastore.org/launchsettings.json"
 }

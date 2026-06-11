@@ -10,23 +10,23 @@ using BentoLab.Models;
 
 namespace BentoLab.Controllers
 {
-    public class DostavasController : Controller
+    public class Dostavas1Controller : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public DostavasController(ApplicationDbContext context)
+        public Dostavas1Controller(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Dostavas
+        // GET: Dostavas1
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Dostave.Include(d => d.Narudzba);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Dostavas/Details/5
+        // GET: Dostavas1/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +45,14 @@ namespace BentoLab.Controllers
             return View(dostava);
         }
 
-        // GET: Dostavas/Create
+        // GET: Dostavas1/Create
         public IActionResult Create()
         {
             ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID");
             return View();
         }
 
-        // POST: Dostavas/Create
+        // POST: Dostavas1/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -69,7 +69,7 @@ namespace BentoLab.Controllers
             return View(dostava);
         }
 
-        // GET: Dostavas/Edit/5
+        // GET: Dostavas1/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace BentoLab.Controllers
             return View(dostava);
         }
 
-        // POST: Dostavas/Edit/5
+        // POST: Dostavas1/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -122,7 +122,7 @@ namespace BentoLab.Controllers
             return View(dostava);
         }
 
-        // GET: Dostavas/Delete/5
+        // GET: Dostavas1/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -141,7 +141,7 @@ namespace BentoLab.Controllers
             return View(dostava);
         }
 
-        // POST: Dostavas/Delete/5
+        // POST: Dostavas1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

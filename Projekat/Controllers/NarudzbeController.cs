@@ -10,23 +10,23 @@ using BentoLab.Models;
 
 namespace BentoLab.Controllers
 {
-    public class DostavasController : Controller
+    public class NarudzbeController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public DostavasController(ApplicationDbContext context)
+        public NarudzbeController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Dostavas
+        // GET: Narudzbe
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Dostave.Include(d => d.Narudzba);
+            var applicationDbContext = _context.Narudzbe.Include(n => n.Korisnik);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: Dostavas/Details/5
+        // GET: Narudzbe/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -34,42 +34,44 @@ namespace BentoLab.Controllers
                 return NotFound();
             }
 
-            var dostava = await _context.Dostave
-                .Include(d => d.Narudzba)
-                .FirstOrDefaultAsync(m => m.DostavaID == id);
-            if (dostava == null)
+            var narudzba = await _context.Narudzbe
+                .Include(n => n.Korisnik)
+                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+            if (narudzba == null)
             {
                 return NotFound();
             }
 
-            return View(dostava);
+            return View(narudzba);
         }
 
-        // GET: Dostavas/Create
+        // GET: Narudzbe/Create
         public IActionResult Create()
         {
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID");
+            ViewData["KorisnikID"] = new SelectList(_context.Set<Korisnik>(), "KorisnikID", "KorisnikID");
             return View();
         }
 
-        // POST: Dostavas/Create
+        // POST: Narudzbe/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DostavaID,Adresa,KontaktTelefon,CijenaDostave,VrijemeIsporuke,Napomena,NarudzbaID")] Dostava dostava)
+        public async Task<IActionResult> Create([Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,DatumNarudzbe,KorisnikID")] Narudzba narudzba)
         {
+            narudzba.Status = StatusNarudzbe.U_IZRADI;
+            narudzba.NacinPreuzimanja = NacinPreuzimanja.LICNO_PREUZIMANJE;
+
             if (ModelState.IsValid)
             {
-                _context.Add(dostava);
+                _context.Add(narudzba);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
-        }
 
-        // GET: Dostavas/Edit/5
+            return View(narudzba);
+        }
+        // GET: Narudzbe/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -77,23 +79,23 @@ namespace BentoLab.Controllers
                 return NotFound();
             }
 
-            var dostava = await _context.Dostave.FindAsync(id);
-            if (dostava == null)
+            var narudzba = await _context.Narudzbe.FindAsync(id);
+            if (narudzba == null)
             {
                 return NotFound();
             }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
+            ViewData["KorisnikID"] = new SelectList(_context.Set<Korisnik>(), "KorisnikID", "KorisnikID", narudzba.KorisnikID);
+            return View(narudzba);
         }
 
-        // POST: Dostavas/Edit/5
+        // POST: Narudzbe/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DostavaID,Adresa,KontaktTelefon,CijenaDostave,VrijemeIsporuke,Napomena,NarudzbaID")] Dostava dostava)
+        public async Task<IActionResult> Edit(int id, [Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,Status,DatumNarudzbe,NacinPreuzimanja,KorisnikID")] Narudzba narudzba)
         {
-            if (id != dostava.DostavaID)
+            if (id != narudzba.NarudzbaID)
             {
                 return NotFound();
             }
@@ -102,12 +104,12 @@ namespace BentoLab.Controllers
             {
                 try
                 {
-                    _context.Update(dostava);
+                    _context.Update(narudzba);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DostavaExists(dostava.DostavaID))
+                    if (!NarudzbaExists(narudzba.NarudzbaID))
                     {
                         return NotFound();
                     }
@@ -118,11 +120,11 @@ namespace BentoLab.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
+            ViewData["KorisnikID"] = new SelectList(_context.Set<Korisnik>(), "KorisnikID", "KorisnikID", narudzba.KorisnikID);
+            return View(narudzba);
         }
 
-        // GET: Dostavas/Delete/5
+        // GET: Narudzbe/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,35 +132,35 @@ namespace BentoLab.Controllers
                 return NotFound();
             }
 
-            var dostava = await _context.Dostave
-                .Include(d => d.Narudzba)
-                .FirstOrDefaultAsync(m => m.DostavaID == id);
-            if (dostava == null)
+            var narudzba = await _context.Narudzbe
+                .Include(n => n.Korisnik)
+                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+            if (narudzba == null)
             {
                 return NotFound();
             }
 
-            return View(dostava);
+            return View(narudzba);
         }
 
-        // POST: Dostavas/Delete/5
+        // POST: Narudzbe/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dostava = await _context.Dostave.FindAsync(id);
-            if (dostava != null)
+            var narudzba = await _context.Narudzbe.FindAsync(id);
+            if (narudzba != null)
             {
-                _context.Dostave.Remove(dostava);
+                _context.Narudzbe.Remove(narudzba);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool DostavaExists(int id)
+        private bool NarudzbaExists(int id)
         {
-            return _context.Dostave.Any(e => e.DostavaID == id);
+            return _context.Narudzbe.Any(e => e.NarudzbaID == id);
         }
     }
 }

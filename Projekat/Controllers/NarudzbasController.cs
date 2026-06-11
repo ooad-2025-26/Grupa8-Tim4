@@ -1,18 +1,11 @@
-<<<<<<< HEAD
-﻿using Microsoft.AspNetCore.Mvc;
-=======
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
->>>>>>> iman
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using BentoLab.Data;
 using BentoLab.Models;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BentoLab.Controllers
 {
@@ -29,21 +22,10 @@ namespace BentoLab.Controllers
 
         public async Task<IActionResult> Index()
         {
-<<<<<<< HEAD
-            // Privremeno dok login nije gotov
-            int trenutniKorisnikId = 1;
-
-            var narudzbe = await _context.Narudzbe
-                .Where(n => n.KorisnikID == trenutniKorisnikId)
-                .ToListAsync();
-
-            return View(narudzbe);
-=======
             var narudzbe = _context.Narudzbe
             .Include(n => n.Korisnik);
 
             return View(await narudzbe.ToListAsync());
->>>>>>> iman
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -51,69 +33,18 @@ namespace BentoLab.Controllers
             if (id == null) return NotFound();
 
             var narudzba = await _context.Narudzbe
-<<<<<<< HEAD
-                .FirstOrDefaultAsync(n => n.NarudzbaID == id);
-
-            if (narudzba == null)
-            {
-                return NotFound();
-            }
-=======
             .Include(n => n.Korisnik)
             .Include(n => n.Stavke)
             .ThenInclude(s => s.Torta)
             .FirstOrDefaultAsync(m => m.NarudzbaID == id);
 
             if (narudzba == null) return NotFound();
->>>>>>> iman
 
             return View(narudzba);
         }
 
         public IActionResult Create()
         {
-<<<<<<< HEAD
-            var model = new Narudzba
-            {
-                DatumNarudzbe = DateTime.Today,
-                Status = StatusNarudzbe.KREIRANA
-            };
-
-            return View(model);
-        }
-
-        // POST: Narudzbas/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DatumNarudzbe,NacinPreuzimanja")] Narudzba narudzba)
-        {
-            // Privremeno dok login ne bude implementiran
-            narudzba.KorisnikID = 1;
-            narudzba.Status = StatusNarudzbe.KREIRANA;
-            narudzba.KoeficijentSlozenosti = 1.0;
-            narudzba.UkupnaCijena = 30.0;
-
-            // Provjera datuma
-            if (narudzba.DatumNarudzbe.Date < DateTime.Today)
-            {
-                ModelState.AddModelError(
-                    "DatumNarudzbe",
-                    "Nije moguće odabrati datum iz prošlosti."
-                );
-            }
-
-            // Maksimalno 5 narudžbi po danu
-            var brojNarudzbiZaTajDan = await _context.Narudzbe
-                .CountAsync(n => n.DatumNarudzbe.Date == narudzba.DatumNarudzbe.Date);
-
-            if (brojNarudzbiZaTajDan >= 5)
-            {
-                ModelState.AddModelError(
-                    "DatumNarudzbe",
-                    "Kapacitet slastičarne za ovaj datum je popunjen! Odaberite drugi dan."
-                );
-            }
-=======
             var narudzba = new Narudzba
             {
                 DatumPreuzimanja = DateTime.Now.AddDays(7)
@@ -142,31 +73,11 @@ namespace BentoLab.Controllers
             ModelState.Remove("Stavke");
             ModelState.Remove("Dostava");
             ModelState.Remove("Obavjestenja");
->>>>>>> iman
 
             if (ModelState.IsValid)
             {
                 _context.Add(narudzba);
                 await _context.SaveChangesAsync();
-<<<<<<< HEAD
-
-                // Ako je izabrana dostava
-                if (narudzba.NacinPreuzimanja == NacinPreuzimanja.DOSTAVA)
-                {
-                    return RedirectToAction(
-                        "Create",
-                        "Dostavas",
-                        new { id = narudzba.NarudzbaID }
-                    );
-                }
-
-                // Ako je lično preuzimanje
-                return RedirectToAction(nameof(Index));
-            }
-
-            return View(narudzba);
-        }
-=======
                 return RedirectToAction("Create", "StavkaNarudzbes");
             }
 
@@ -248,6 +159,5 @@ namespace BentoLab.Controllers
         {
             return _context.Narudzbe.Any(e => e.NarudzbaID == id);
         }
->>>>>>> iman
     }
 }

@@ -1,62 +1,6 @@
 ﻿@model IEnumerable<BentoLab.Models.Narudzba>
 
 @{
-<<<<<<< HEAD
-    ViewData["Title"] = "Moje Narudžbe";
-}
-
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Pregled Mojih Narudžbi</h2>
-        <a asp-action="Create" class="btn btn-primary btn-lg"> Nova Narudžba</a>
-    </div>
-
-    @if (!Model.Any())
-    {
-        <div class="alert alert-info text-center" role="alert">
-            Trenutno nemate kreiranih narudžbi. Kliknite na dugme iznad da napravite prvu bento tortu!
-        </div>
-    }
-    else
-    {
-        <div class="table-responsive shadow-sm rounded">
-            <table class="table table-hover align-middle bg-white mb-0">
-                <thead class="table-dark">
-                    <tr>
-                        <th>ID</th>
-                        <th>Datum narudžbe</th>
-                        <th>Način preuzimanja</th>
-                        <th>Status</th>
-                        <th>Ukupna cijena</th>
-                        <th>Akcije</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td><strong>#@item.NarudzbaID</strong></td>
-                            <td>@item.DatumNarudzbe.ToString("dd.MM.yyyy")</td>
-                            <td>
-                                <span class="badge @(item.NacinPreuzimanja.ToString() == "DOSTAVA" ? "bg-info text-dark" : "bg-warning text-dark")">
-                                    @item.NacinPreuzimanja
-                                </span>
-                            </td>
-                            <td>
-                                <span class="badge bg-secondary">@item.Status</span>
-                            </td>
-                            <td class="fw-bold text-success">@item.UkupnaCijena.ToString("0.00") KM</td>
-                            <td>
-                                <a asp-action="Details" asp-route-id="@item.NarudzbaID" class="btn btn-sm btn-outline-info">Detalji</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    }
-</div>
-=======
     ViewData["Title"] = "Narudžbe";
 }
 
@@ -106,4 +50,3 @@ else
 
     <h5>Ukupan broj narudžbi: @Model.Count()</h5>
 }
->>>>>>> iman

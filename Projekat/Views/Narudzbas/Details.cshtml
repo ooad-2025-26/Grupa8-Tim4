@@ -4,35 +4,6 @@
     ViewData["Title"] = "Detalji narudžbe";
 }
 
-<<<<<<< HEAD
-<div class="container mt-4" style="max-width:700px;">
-    <div class="card shadow-sm">
-        <div class="card-header bg-dark text-white">
-            <h3>Detalji narudžbe #@Model.NarudzbaID</h3>
-        </div>
-
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-5">Datum narudžbe:</dt>
-                <dd class="col-sm-7">@Model.DatumNarudzbe.ToString("dd.MM.yyyy")</dd>
-
-                <dt class="col-sm-5">Način preuzimanja:</dt>
-                <dd class="col-sm-7">@Model.NacinPreuzimanja</dd>
-
-                <dt class="col-sm-5">Status:</dt>
-                <dd class="col-sm-7">@Model.Status</dd>
-
-                <dt class="col-sm-5">Ukupna cijena:</dt>
-                <dd class="col-sm-7">@Model.UkupnaCijena.ToString("0.00") KM</dd>
-            </dl>
-
-            <a asp-action="Index" class="btn btn-secondary">
-                Nazad na pregled
-            </a>
-        </div>
-    </div>
-</div>
-=======
 <h1>Detalji narudžbe</h1>
 <hr />
 
@@ -86,4 +57,3 @@
 <a asp-action="Edit" asp-route-id="@Model.NarudzbaID">Uredi</a>
 |
 <a asp-action="Index">Nazad na listu</a>
->>>>>>> iman
