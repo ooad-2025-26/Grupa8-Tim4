@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BentoLab.Data;
 using BentoLab.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BentoLab.Controllers
 {
@@ -22,8 +20,14 @@ namespace BentoLab.Controllers
         // GET: Narudzbas
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Narudzbe.Include(n => n.Korisnik);
-            return View(await applicationDbContext.ToListAsync());
+            // Privremeno dok login nije gotov
+            int trenutniKorisnikId = 1;
+
+            var narudzbe = await _context.Narudzbe
+                .Where(n => n.KorisnikID == trenutniKorisnikId)
+                .ToListAsync();
+
+            return View(narudzbe);
         }
 
         // GET: Narudzbas/Details/5
@@ -35,8 +39,8 @@ namespace BentoLab.Controllers
             }
 
             var narudzba = await _context.Narudzbe
-                .Include(n => n.Korisnik)
-                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
+                .FirstOrDefaultAsync(n => n.NarudzbaID == id);
+
             if (narudzba == null)
             {
                 return NotFound();
@@ -48,117 +52,67 @@ namespace BentoLab.Controllers
         // GET: Narudzbas/Create
         public IActionResult Create()
         {
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID");
-            return View();
+            var model = new Narudzba
+            {
+                DatumNarudzbe = DateTime.Today,
+                Status = StatusNarudzbe.KREIRANA
+            };
+
+            return View(model);
         }
 
         // POST: Narudzbas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,Status,DatumNarudzbe,NacinPreuzimanja,KorisnikID")] Narudzba narudzba)
+        public async Task<IActionResult> Create([Bind("DatumNarudzbe,NacinPreuzimanja")] Narudzba narudzba)
         {
+            // Privremeno dok login ne bude implementiran
+            narudzba.KorisnikID = 1;
+            narudzba.Status = StatusNarudzbe.KREIRANA;
+            narudzba.KoeficijentSlozenosti = 1.0;
+            narudzba.UkupnaCijena = 30.0;
+
+            // Provjera datuma
+            if (narudzba.DatumNarudzbe.Date < DateTime.Today)
+            {
+                ModelState.AddModelError(
+                    "DatumNarudzbe",
+                    "Nije moguće odabrati datum iz prošlosti."
+                );
+            }
+
+            // Maksimalno 5 narudžbi po danu
+            var brojNarudzbiZaTajDan = await _context.Narudzbe
+                .CountAsync(n => n.DatumNarudzbe.Date == narudzba.DatumNarudzbe.Date);
+
+            if (brojNarudzbiZaTajDan >= 5)
+            {
+                ModelState.AddModelError(
+                    "DatumNarudzbe",
+                    "Kapacitet slastičarne za ovaj datum je popunjen! Odaberite drugi dan."
+                );
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(narudzba);
                 await _context.SaveChangesAsync();
+
+                // Ako je izabrana dostava
+                if (narudzba.NacinPreuzimanja == NacinPreuzimanja.DOSTAVA)
+                {
+                    return RedirectToAction(
+                        "Create",
+                        "Dostavas",
+                        new { id = narudzba.NarudzbaID }
+                    );
+                }
+
+                // Ako je lično preuzimanje
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", narudzba.KorisnikID);
-            return View(narudzba);
-        }
-
-        // GET: Narudzbas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var narudzba = await _context.Narudzbe.FindAsync(id);
-            if (narudzba == null)
-            {
-                return NotFound();
-            }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", narudzba.KorisnikID);
-            return View(narudzba);
-        }
-
-        // POST: Narudzbas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("NarudzbaID,UkupnaCijena,KoeficijentSlozenosti,Status,DatumNarudzbe,NacinPreuzimanja,KorisnikID")] Narudzba narudzba)
-        {
-            if (id != narudzba.NarudzbaID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(narudzba);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!NarudzbaExists(narudzba.NarudzbaID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["KorisnikID"] = new SelectList(_context.Korisnik, "KorisnikID", "KorisnikID", narudzba.KorisnikID);
-            return View(narudzba);
-        }
-
-        // GET: Narudzbas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var narudzba = await _context.Narudzbe
-                .Include(n => n.Korisnik)
-                .FirstOrDefaultAsync(m => m.NarudzbaID == id);
-            if (narudzba == null)
-            {
-                return NotFound();
-            }
 
             return View(narudzba);
-        }
-
-        // POST: Narudzbas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var narudzba = await _context.Narudzbe.FindAsync(id);
-            if (narudzba != null)
-            {
-                _context.Narudzbe.Remove(narudzba);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool NarudzbaExists(int id)
-        {
-            return _context.Narudzbe.Any(e => e.NarudzbaID == id);
         }
     }
 }

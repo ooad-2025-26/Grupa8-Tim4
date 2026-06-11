@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Student\\Source\\Repos\\Grupa8-Tim4\\BentoLab.csproj": {}
+    "C:\\Users\\iTTaste\\Desktop\\OOAD git\\BentoLab.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Student\\Source\\Repos\\Grupa8-Tim4\\BentoLab.csproj": {
+    "C:\\Users\\iTTaste\\Desktop\\OOAD git\\BentoLab.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\Grupa8-Tim4\\BentoLab.csproj",
+        "projectUniqueName": "C:\\Users\\iTTaste\\Desktop\\OOAD git\\BentoLab.csproj",
         "projectName": "BentoLab",
-        "projectPath": "C:\\Users\\Student\\Source\\Repos\\Grupa8-Tim4\\BentoLab.csproj",
-        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Student\\Source\\Repos\\Grupa8-Tim4\\obj\\",
+        "projectPath": "C:\\Users\\iTTaste\\Desktop\\OOAD git\\BentoLab.csproj",
+        "packagesPath": "C:\\Users\\iTTaste\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\iTTaste\\Desktop\\OOAD git\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\iTTaste\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,12 +43,44 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "direct"
-        }
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[10.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -56,7 +92,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.314/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,57 +1,61 @@
 ﻿@model BentoLab.Models.Dostava
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Podaci za dostavu";
 }
 
-<h1>Create</h1>
+<div class="container mt-4" style="max-width: 600px;">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-dark text-center">
+            <h3 class="mb-0">Podaci za Dostavu Bento Torte</h3>
+        </div>
+        <div class="card-body p-4">
+            <div class="alert alert-warning text-center fw-bold" role="alert">
+                S obzirom da ste odabrali dostavu, na ukupnu cijenu se dodaje trošak od @Model.CijenaDostave.ToString("0.00") KM.
+            </div>
 
-<h4>Dostava</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Adresa" class="control-label"></label>
-                <input asp-for="Adresa" class="form-control" />
-                <span asp-validation-for="Adresa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="KontaktTelefon" class="control-label"></label>
-                <input asp-for="KontaktTelefon" class="form-control" />
-                <span asp-validation-for="KontaktTelefon" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CijenaDostave" class="control-label"></label>
-                <input asp-for="CijenaDostave" class="form-control" />
-                <span asp-validation-for="CijenaDostave" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="VrijemeIsporuke" class="control-label"></label>
-                <input asp-for="VrijemeIsporuke" class="form-control" />
-                <span asp-validation-for="VrijemeIsporuke" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Napomena" class="control-label"></label>
-                <input asp-for="Napomena" class="form-control" />
-                <span asp-validation-for="Napomena" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NarudzbaID" class="control-label"></label>
-                <select asp-for="NarudzbaID" class ="form-control" asp-items="ViewBag.NarudzbaID"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <input type="hidden" asp-for="NarudzbaID" />
+                <input type="hidden" asp-for="CijenaDostave" />
+
+                <div class="form-group mb-3">
+                    <label asp-for="Adresa" class="form-label fw-bold">Adresa za dostavu:</label>
+                    <input asp-for="Adresa" class="form-control" placeholder="Ulica i broj, grad" />
+                    <span asp-validation-for="Adresa" class="text-danger small"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="KontaktTelefon" class="form-label fw-bold">Kontakt telefon:</label>
+                    <input asp-for="KontaktTelefon" class="form-control" placeholder="06X/XXX-XXX" />
+                    <span asp-validation-for="KontaktTelefon" class="text-danger small"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="VrijemeIsporuke" class="form-label fw-bold">Željeno vrijeme isporuke:</label>
+                    <input asp-for="VrijemeIsporuke" type="datetime-local" class="form-control" />
+                    <span asp-validation-for="VrijemeIsporuke" class="text-danger small"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="Napomena" class="form-label fw-bold">Napomena za dostavljača (opcionalno):</label>
+                    <textarea asp-for="Napomena" class="form-control" rows="3" placeholder="Npr. zvoniti na prezime..."></textarea>
+                    <span asp-validation-for="Napomena" class="text-danger small"></span>
+                </div>
+
+                <hr class="my-4" />
+
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-success btn-lg">Završi i Potvrdi Narudžbu</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

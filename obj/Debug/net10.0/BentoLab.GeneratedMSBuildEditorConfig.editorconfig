@@ -1,0 +1,327 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.RootNamespace = BentoLab
+build_property.RootNamespace = BentoLab
+build_property.ProjectDir = C:\Users\iTTaste\Desktop\OOAD git\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\iTTaste\Desktop\OOAD git
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dekoracijas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVrb3JhY2lqYXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dekoracijas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVrb3JhY2lqYXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dekoracijas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVrb3JhY2lqYXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dekoracijas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVrb3JhY2lqYXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dekoracijas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVrb3JhY2lqYXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas1/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXMxXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas1/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXMxXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas1/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXMxXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas1/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXMxXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas1/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXMxXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Dostavas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9zdGF2YXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisniks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisniks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisniks/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisniks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisniks/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisnik/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisnik/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisnik/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisnik/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korisnik/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29yaXNuaWtcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korpas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29ycGFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korpas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29ycGFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korpas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29ycGFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korpas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29ycGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Korpas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS29ycGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbe/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbe/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbe/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbe/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Narudzbe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTmFydWR6YmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Obavjestenjes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Jhdmplc3Rlbmplc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Obavjestenjes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Jhdmplc3Rlbmplc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Obavjestenjes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Jhdmplc3Rlbmplc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Obavjestenjes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Jhdmplc3Rlbmplc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Obavjestenjes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT2Jhdmplc3Rlbmplc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbes/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbes/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbes/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbes/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbes/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbe/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbe/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbe/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbe/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/StavkaNarudzbe/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdmthTmFydWR6YmVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Tortas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Tortas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Tortas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Tortas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Tortas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Torta/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Torta/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Torta/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Torta/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Torta/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVG9ydGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/iTTaste/Desktop/OOAD git/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-zkcirce2lc

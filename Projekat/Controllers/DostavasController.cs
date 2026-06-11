@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BentoLab.Data;
 using BentoLab.Models;
+using System.Threading.Tasks;
 
 namespace BentoLab.Controllers
 {
@@ -19,146 +15,55 @@ namespace BentoLab.Controllers
             _context = context;
         }
 
-        // GET: Dostavas
-        public async Task<IActionResult> Index()
+        // GET: Dostavas/Create/5
+        public IActionResult Create(int id)
         {
-            var applicationDbContext = _context.Dostave.Include(d => d.Narudzba);
-            return View(await applicationDbContext.ToListAsync());
-        }
+            var narudzba = _context.Narudzbe.Find(id);
 
-        // GET: Dostavas/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
+            if (narudzba == null)
             {
                 return NotFound();
             }
 
-            var dostava = await _context.Dostave
-                .Include(d => d.Narudzba)
-                .FirstOrDefaultAsync(m => m.DostavaID == id);
-            if (dostava == null)
+            var model = new Dostava
             {
-                return NotFound();
-            }
+                NarudzbaID = id,
+                CijenaDostave = 5.0,
+                VrijemeIsporuke = System.DateTime.Now.AddDays(1)
+            };
 
-            return View(dostava);
-        }
-
-        // GET: Dostavas/Create
-        public IActionResult Create()
-        {
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID");
-            return View();
+            return View(model);
         }
 
         // POST: Dostavas/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("DostavaID,Adresa,KontaktTelefon,CijenaDostave,VrijemeIsporuke,Napomena,NarudzbaID")] Dostava dostava)
+        public async Task<IActionResult> Create(
+            [Bind("Adresa,KontaktTelefon,CijenaDostave,VrijemeIsporuke,Napomena,NarudzbaID")]
+            Dostava dostava)
         {
             if (ModelState.IsValid)
             {
+                // Spašavanje dostave
                 _context.Add(dostava);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
-        }
 
-        // GET: Dostavas/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+                // Dodavanje cijene dostave na ukupnu cijenu narudžbe
+                var narudzba = await _context.Narudzbe.FindAsync(dostava.NarudzbaID);
 
-            var dostava = await _context.Dostave.FindAsync(id);
-            if (dostava == null)
-            {
-                return NotFound();
-            }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
-        }
-
-        // POST: Dostavas/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("DostavaID,Adresa,KontaktTelefon,CijenaDostave,VrijemeIsporuke,Napomena,NarudzbaID")] Dostava dostava)
-        {
-            if (id != dostava.DostavaID)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                if (narudzba != null)
                 {
-                    _context.Update(dostava);
+                    narudzba.UkupnaCijena += dostava.CijenaDostave;
+
+                    _context.Update(narudzba);
                     await _context.SaveChangesAsync();
                 }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!DostavaExists(dostava.DostavaID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            ViewData["NarudzbaID"] = new SelectList(_context.Narudzbe, "NarudzbaID", "NarudzbaID", dostava.NarudzbaID);
-            return View(dostava);
-        }
 
-        // GET: Dostavas/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dostava = await _context.Dostave
-                .Include(d => d.Narudzba)
-                .FirstOrDefaultAsync(m => m.DostavaID == id);
-            if (dostava == null)
-            {
-                return NotFound();
+                // Povratak na pregled narudžbi
+                return RedirectToAction("Index", "Narudzbas");
             }
 
             return View(dostava);
-        }
-
-        // POST: Dostavas/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var dostava = await _context.Dostave.FindAsync(id);
-            if (dostava != null)
-            {
-                _context.Dostave.Remove(dostava);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool DostavaExists(int id)
-        {
-            return _context.Dostave.Any(e => e.DostavaID == id);
         }
     }
 }
