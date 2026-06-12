@@ -63,7 +63,7 @@ namespace BentoLab.Controllers
             EmailService.PosaljiObavjestenje(emailKupca, testniBrojNarudzbe, "Spremno za preuzimanje", putanjaZaMail);
 
             TempData["Poruka"] = "Uspješno uslikana bento torta i poslana obavijest sa slikom na e-mail!";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("AdminPanel", "Home");
         }
     }
 }
