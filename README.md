@@ -34,5 +34,4 @@ Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i 
 
 ---
 
-### Edukacija
 **ETF Sarajevo** – Objektno orijentisana analiza i dizajn (OOAD) *Ak. godina 2025/2026*
