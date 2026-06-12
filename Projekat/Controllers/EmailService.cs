@@ -33,11 +33,10 @@ namespace BentoLab.Controllers
                 {
                     // Pošto Mailtrap radi lokalno, koristimo ugrađenu CID metodu za slanje slike kao priloga (Attachment)
                     // ili je povezujemo direktno ako imamo javni link. 
-                    // Najsigurnije za faks i Mailtrap je da sliku pošaljemo kao Attachment i prikažemo je unutar HTML-a.
 
                     try
                     {
-                        // Pravimo putanju do slike na tvom računaru
+                        // Pravimo putanju do slike 
                         string stvarnaPutanjaNaDisku = AppDomain.CurrentDomain.BaseDirectory + "..\\..\\..\\wwwroot" + putanjaSlike;
                         Attachment inlineSlika = new Attachment(stvarnaPutanjaNaDisku);
                         inlineSlika.ContentId = "bento_slika";

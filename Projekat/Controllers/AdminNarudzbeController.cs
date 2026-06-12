@@ -52,7 +52,7 @@ namespace BentoLab.Controllers
 
             if (narudzba != null)
             {
-                // Pretvaramo tekst iz padajućeg menija u vaš Enum (KREIRANA, POTVRDJENA...)
+                // Pretvaramo tekst iz padajućeg menija u Enum (KREIRANA, POTVRDJENA...)
                 if (Enum.TryParse(typeof(StatusNarudzbe), noviStatus, out var statusEnum))
                 {
                     narudzba.Status = (StatusNarudzbe)statusEnum;

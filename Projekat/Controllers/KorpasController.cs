@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using BentoLab.Data;
 using BentoLab.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BentoLab.Controllers
 {
@@ -26,6 +27,7 @@ namespace BentoLab.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Create()
         {
             string[] cijene = TempData["CijenaKreiraneTorte"] as string[];
@@ -48,6 +50,7 @@ namespace BentoLab.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public IActionResult ProcesirajPreuzimanje(string nacinPreuzimanja, string emailKupca, DateTime datumPreuzimanja)
         {
             TempData["DatumPreuzimanja"] = datumPreuzimanja.ToString("yyyy-MM-dd");

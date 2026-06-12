@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BentoLab.Data;
+using BentoLab.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using BentoLab.Data;
-using BentoLab.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims; // Omogućava prepoznavanje prijavljenog korisnika Amre
+using System.Threading.Tasks;
 
 namespace BentoLab.Controllers
 {
@@ -42,6 +43,7 @@ namespace BentoLab.Controllers
 
         // GET: Narudzbas/Create
         // Otvara formu za kreiranje nove narudžbe
+        [Authorize]
         public IActionResult Create()
         {
             ViewBag.TrenutniDatum = DateTime.Now.ToString("yyyy-MM-ddTHH:mm");
@@ -49,9 +51,10 @@ namespace BentoLab.Controllers
         }
 
         // POST: Narudzbas/Create
-        // Izvršava se kada klikneš na plavo dugme "Potvrdi i kreiraj narudžbu"
+        // Izvršava se klikom na dugme "Potvrdi i kreiraj narudžbu"
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create(DateTime datumPreuzimanja, string nacinPreuzimanjaStr)
         {
             try
@@ -59,7 +62,7 @@ namespace BentoLab.Controllers
                 // Usklađivanje sa Enumom iz baze podataka: LICNO_PREUZIMANJE ili DOSTAVA
                 NacinPreuzimanja nacin = nacinPreuzimanjaStr == "DOSTAVA" ? NacinPreuzimanja.DOSTAVA : NacinPreuzimanja.LICNO_PREUZIMANJE;
 
-                // 1. KORAK: Pokušavamo dohvatiti ID trenutno logovanog korisnika iz sesije (Identity)
+                // Pokušavamo dohvatiti ID trenutno logovanog korisnika iz sesije (Identity)
                 string trenutniKorisnikIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 int stvarniKorisnikId = 0;
 
@@ -68,7 +71,7 @@ namespace BentoLab.Controllers
                     int.TryParse(trenutniKorisnikIdStr, out stvarniKorisnikId);
                 }
 
-                // 2. KORAK: Ako sesija nije pronađena, tražimo korisnika preko emaila koji je na ekranu
+                // Ako sesija nije pronađena, tražimo korisnika preko emaila koji je na ekranu
                 if (stvarniKorisnikId == 0)
                 {
                     var korisnikPoEmailu = await _context.Users.FirstOrDefaultAsync(u => u.Email == "amerdzanic1@etf.unsa.ba");
@@ -78,7 +81,7 @@ namespace BentoLab.Controllers
                     }
                     else
                     {
-                        // 3. KORAK: Sigurnosni korak - ako nema tog emaila, uzmi prvog bilo kojeg korisnika iz baze
+                        // Sigurnosni korak - ako nema tog emaila, uzmi prvog bilo kojeg korisnika iz baze
                         var biloKojiKorisnik = await _context.Users.FirstOrDefaultAsync();
                         if (biloKojiKorisnik != null)
                         {
@@ -107,7 +110,7 @@ namespace BentoLab.Controllers
                 _context.Narudzbe.Add(novaNarudzba);
                 await _context.SaveChangesAsync();
 
-                // POPRAVAK: Umjesto ispisa teksta ili greške, ovaj kod te automatski vraća na listu narudžbi!
+                // Umjesto ispisa teksta ili greške, ovaj kod automatski vraća na listu narudžbi
                 return RedirectToAction(nameof(Index));
             }
             catch (Exception ex)

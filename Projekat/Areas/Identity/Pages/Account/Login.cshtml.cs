@@ -34,11 +34,13 @@ namespace BentoLab.Areas.Identity.Pages.Account
             public string Password { get; set; }
         }
 
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
+            // Ako je returnUrl prazan, stavljamo da default bude početna stranica za Torte
+            returnUrl ??= Url.Action("Index", "Torta");
+
             if (ModelState.IsValid)
             {
-                // Provjeravamo da li korisnik uopšte postoji u bazi
                 var user = await _userManager.FindByEmailAsync(Input.Email);
                 if (user == null)
                 {
@@ -46,23 +48,29 @@ namespace BentoLab.Areas.Identity.Pages.Account
                     return Page();
                 }
 
-                // Provjeravamo da li je potvrdio mail
                 if (!await _userManager.IsEmailConfirmedAsync(user))
                 {
                     ModelState.AddModelError(string.Empty, "Račun nije verifikovan. Molimo potvrdite vaš email.");
                     return Page();
                 }
 
-                // Pokušaj prijave
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
                 {
                     var adminKorisnik = await _userManager.FindByEmailAsync(Input.Email);
 
+                    // 1. Ako je u pitanju Admin, njega UVIJEK šaljemo u AdminPanel bez obzira na sve
                     if (adminKorisnik != null && adminKorisnik.Uloga == Uloga.ADMIN)
                     {
                         return RedirectToAction("AdminPanel", "Home");
+                    }
+
+                    // 2. Ako je obični kupac, vraćamo ga tamo odakle je došao (npr. u korpu)
+                    // Radimo LocalRedirect samo ako je URL siguran i lokalni
+                    if (Url.IsLocalUrl(returnUrl))
+                    {
+                        return LocalRedirect(returnUrl);
                     }
 
                     return RedirectToAction("Index", "Torta");

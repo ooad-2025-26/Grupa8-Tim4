@@ -38,7 +38,7 @@ namespace BentoLab.Controllers
                 return BadRequest("Slikanje nije uspjelo.");
             }
 
-            // 1. Dekodiranje i spašavanje slike na disk (Tvoj postojeći kod)
+            // 1. Dekodiranje i spašavanje slike na disk 
             var cistaSlika = base64Image.Replace("data:image/jpeg;base64,", "");
             byte[] bajtoviSlike = Convert.FromBase64String(cistaSlika);
 
@@ -55,11 +55,7 @@ namespace BentoLab.Controllers
             // Relativna putanja koju spremamo u bazu i šaljemo servisu
             string putanjaZaMail = "/slike_torta/" + imeFajla;
 
-            // TODO: U pravoj aplikaciji ovdje iz baze izvučete stvarni mail kupca za ovu narudžbu
-            // npr. var narudzba = _context.Narudzbe.Find(narudzbaId);
-            // string emailKupca = narudzba.EmailKupca;
-
-            // Za potrebe testiranja i odbrane na faksu, ovdje ćemo staviti testni mail:
+            // Za potrebe testiranja, ovdje ćemo staviti testni mail:
             string emailKupca = "kupac.test@gmail.com";
             string testniBrojNarudzbe = "CK-0847";
 

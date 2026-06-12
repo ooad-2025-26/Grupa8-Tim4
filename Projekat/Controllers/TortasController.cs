@@ -23,8 +23,8 @@ namespace BentoLab.Controllers
             return View();
         }
 
-        // KLJUČNI POPRAVAK: Čim korisnik klikne da pravi NOVU tortu ispočetka,
-        // čistimo zaostale torte od prošlog puta. Tako aplikacija kreće od nule!
+        // Čim korisnik klikne da pravi NOVU tortu ispočetka,
+        // čistimo zaostale torte od prošlog puta. Tako aplikacija kreće od nule
         public IActionResult Kreiraj()
         {
             TempData.Keep("NazivKreiraneTorte");
@@ -99,7 +99,7 @@ namespace BentoLab.Controllers
             return View();
         }
 
-        // Vraćeno na stabilni TempData sistem koji sigurno radi na klik!
+        // Vraćeno na stabilni TempData sistem koji sigurno radi na klik
         [HttpPost]
         public IActionResult DodajUKorpu(string nazivTorte, string cijenaTorte)
         {
