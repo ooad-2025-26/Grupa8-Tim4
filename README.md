@@ -4,11 +4,11 @@
 
 Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i u potpunosti je funkcionalna s produkcijskom bazom podataka.
 
-🔗 **Link aplikacije:** [https://bentolab.onrender.com](https://bentolab.onrender.com)
+**Link aplikacije:** [https://bentolab.onrender.com](https://bentolab.onrender.com)
 
 ---
 
-## 🔑 Pristupni podaci za testiranje
+## Pristupni podaci za testiranje
 
 | Uloga | Email | Lozinka |
 | :--- | :--- | :--- |
@@ -17,7 +17,7 @@ Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i 
 
 ---
 
-## 🛠️ Korištene tehnologije za deployment
+## Korištene tehnologije za deployment
 
 * **Hosting platforma:** Render (Web Services)
 * **Baza podataka:** Render PostgreSQL (Managed Database)
@@ -25,7 +25,7 @@ Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i 
 
 ---
 
-## 👥 Članovi tima
+## Članovi tima
 
 * Amra Merdžanić
 * Ilma Zubović
@@ -34,7 +34,5 @@ Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i 
 
 ---
 
-### 🎓 Edukacija
+### Edukacija
 **ETF Sarajevo** – Objektno orijentisana analiza i dizajn (OOAD) *Ak. godina 2025/2026*
-
-
