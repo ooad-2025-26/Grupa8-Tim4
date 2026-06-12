@@ -1,34 +1,40 @@
 # Grupa8-Tim4
-BentoLab – Sistem za naručivanje personalizovanih bento torti
 
-Pristupni podaci za testiranje
+### BentoLab – Sistem za naručivanje personalizovanih bento torti
 
-  Administrator:
-    Email: admin5@bentolab.ba
-    Lozinka: Admin123!
+Aplikacija je uspješno postavljena (deployana) na cloud platformu **Render** i u potpunosti je funkcionalna s produkcijskom bazom podataka.
 
-  Testni korisnik: 
-    Email: izubovic1@etf.unsa.ba
-    Lozinka: Ilma123!
+🔗 **Link aplikacije:** [https://bentolab.onrender.com](https://bentolab.onrender.com)
 
-Aplikacija je uspješno postavljena (deployana) na cloud platformu Render i u potpunosti je funkcionalna s produkcijskom bazom podataka.
+---
 
-Link: https://bentolab.onrender.com
+## 🔑 Pristupni podaci za testiranje
 
-Korištene tehnologije za deployment
-    Hosting platforma: Render (Web Services)
-    Baza podataka: Render PostgreSQL (Managed Database)
-    Runtime: Docker / .NET Core MVC
+| Uloga | Email | Lozinka |
+| :--- | :--- | :--- |
+| **Administrator** | `admin5@bentolab.ba` | `Admin123!` |
+| **Testni korisnik** | `izubovic1@etf.unsa.ba` | `Ilma123!` |
 
-Članovi tima
+---
 
-  Amra Merdžanić
-  Ilma Zubović
-  Iman Bakić
-  Ines Ćurdo
+## 🛠️ Korištene tehnologije za deployment
 
-ETF Sarajevo
-Objektno orijentisana analiza i dizajn (OOAD)
-Ak. godina 2025/2026
+* **Hosting platforma:** Render (Web Services)
+* **Baza podataka:** Render PostgreSQL (Managed Database)
+* **Runtime:** Docker / .NET Core MVC
+
+---
+
+## 👥 Članovi tima
+
+* Amra Merdžanić
+* Ilma Zubović
+* Iman Bakić
+* Ines Ćurdo
+
+---
+
+### 🎓 Edukacija
+**ETF Sarajevo** – Objektno orijentisana analiza i dizajn (OOAD) *Ak. godina 2025/2026*
 
 
