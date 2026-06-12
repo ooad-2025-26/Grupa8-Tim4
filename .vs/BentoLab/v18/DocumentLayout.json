@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Korisnik\\Grupa8-Tim4\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\views\\korpas\\dostava.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\korpas\\dostava.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -139,14 +155,6 @@
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\korisnikscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\controllers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -165,10 +173,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\areas\\identity\\pages\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -219,10 +223,6 @@
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\korisnik\\grupa8-tim4\\projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -246,11 +246,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
+              "Title": "KameraController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KameraController.cs",
+              "RelativeDocumentMoniker": "Projekat\\Controllers\\KameraController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KameraController.cs",
+              "RelativeToolTip": "Projekat\\Controllers\\KameraController.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwDwAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-12T07:22:50.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
+              "RelativeDocumentMoniker": "Projekat\\appsettings.json",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
+              "RelativeToolTip": "Projekat\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-11T12:53:20.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Dostava.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Korpas\\Dostava.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Korpas\\Dostava.cshtml",
@@ -263,7 +289,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Korisnik\\Edit.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Korisnik\\Edit.cshtml",
@@ -276,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Korisnik\\Create.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Korisnik\\Create.cshtml",
@@ -289,7 +315,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dostavas1\\Create.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dostavas1\\Create.cshtml",
@@ -302,7 +328,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dostavas\\Create.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dostavas\\Create.cshtml",
@@ -315,7 +341,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "RelativeToolTip": "Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAQwFUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-12T07:03:32.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Projekat\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Projekat\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-11T13:35:17.028Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "UslikajBento.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Kamera\\UslikajBento.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Kamera\\UslikajBento.cshtml",
@@ -328,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Kamera\\Index.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Kamera\\Index.cshtml",
@@ -341,7 +393,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dekoracijas\\Edit.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dekoracijas\\Edit.cshtml",
@@ -354,7 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dekoracijas\\Details.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dekoracijas\\Details.cshtml",
@@ -367,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dekoracijas\\Delete.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dekoracijas\\Delete.cshtml",
@@ -380,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Dekoracijas\\Create.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Dekoracijas\\Create.cshtml",
@@ -393,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\AdminNarudzbe\\Index.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\AdminNarudzbe\\Index.cshtml",
@@ -406,7 +458,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\AdminNarudzbe\\Details.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\AdminNarudzbe\\Details.cshtml",
@@ -419,7 +471,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "Uloga.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Uloga.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Uloga.cs",
@@ -432,7 +484,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "TipDekoracije.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\TipDekoracije.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\TipDekoracije.cs",
@@ -445,7 +497,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 21,
               "Title": "StatusNarudzbe.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\StatusNarudzbe.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\StatusNarudzbe.cs",
@@ -458,7 +510,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 22,
               "Title": "Obavjestenje.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Obavjestenje.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Obavjestenje.cs",
@@ -471,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 23,
               "Title": "Narudzba.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Narudzba.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Narudzba.cs",
@@ -484,7 +536,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 24,
               "Title": "NacinPreuzimanja.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\NacinPreuzimanja.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\NacinPreuzimanja.cs",
@@ -497,7 +549,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 25,
               "Title": "Korpa.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Korpa.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Korpa.cs",
@@ -510,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 27,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\ErrorViewModel.cs",
@@ -523,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "Torta.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Torta.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Torta.cs",
@@ -536,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 28,
               "Title": "Dostava.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Dostava.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Dostava.cs",
@@ -549,7 +601,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "StavkaNarudzbe.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\StavkaNarudzbe.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\StavkaNarudzbe.cs",
@@ -562,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 29,
               "Title": "Dekoracija.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Dekoracija.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Dekoracija.cs",
@@ -575,7 +627,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 30,
               "Title": "20260530150757_InitialCreate.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Migrations\\20260530150757_InitialCreate.cs",
               "RelativeDocumentMoniker": "Projekat\\Migrations\\20260530150757_InitialCreate.cs",
@@ -588,7 +640,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 31,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Projekat\\Data\\ApplicationDbContext.cs",
@@ -601,7 +653,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 34,
               "Title": "ObavjestenjesController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\ObavjestenjesController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\ObavjestenjesController.cs",
@@ -614,7 +666,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 26,
               "Title": "Korisnik.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Models\\Korisnik.cs",
               "RelativeDocumentMoniker": "Projekat\\Models\\Korisnik.cs",
@@ -627,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 37,
               "Title": "KorisniksController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KorisniksController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\KorisniksController.cs",
@@ -640,20 +692,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "KameraController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KameraController.cs",
-              "RelativeDocumentMoniker": "Projekat\\Controllers\\KameraController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KameraController.cs",
-              "RelativeToolTip": "Projekat\\Controllers\\KameraController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-12T07:22:50.839Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 36,
               "Title": "KorpasController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\KorpasController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\KorpasController.cs",
@@ -666,7 +705,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 33,
               "Title": "StavkaNarudzbesController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\StavkaNarudzbesController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\StavkaNarudzbesController.cs",
@@ -679,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 32,
               "Title": "TortasController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\TortasController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\TortasController.cs",
@@ -692,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\EmailService.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\EmailService.cs",
@@ -705,7 +744,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "DostavasController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\DostavasController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\DostavasController.cs",
@@ -718,7 +757,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 35,
               "Title": "NarudzbasController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\NarudzbasController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\NarudzbasController.cs",
@@ -731,7 +770,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "DekoracijasController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\DekoracijasController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\DekoracijasController.cs",
@@ -744,7 +783,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "AdminNarudzbeController.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\AdminNarudzbeController.cs",
               "RelativeDocumentMoniker": "Projekat\\Controllers\\AdminNarudzbeController.cs",
@@ -757,7 +796,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "Login.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "RelativeDocumentMoniker": "Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
@@ -770,33 +809,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeDocumentMoniker": "Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "RelativeToolTip": "Projekat\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADYAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-06-12T07:03:32.499Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Projekat\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Projekat\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAwwBIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-11T13:35:17.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Home\\Privacy.cshtml",
@@ -809,7 +822,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Home\\Index.cshtml",
@@ -822,7 +835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Shared\\_Layout.cshtml",
@@ -835,7 +848,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "_LoginPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Shared\\_LoginPartial.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Shared\\_LoginPartial.cshtml",
@@ -848,7 +861,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Program.cs",
               "RelativeDocumentMoniker": "Projekat\\Program.cs",
@@ -861,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
@@ -874,7 +887,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Edit.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Edit.cshtml",
@@ -887,7 +900,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Details.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Details.cshtml",
@@ -900,7 +913,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Create.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Create.cshtml",
@@ -913,7 +926,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Delete.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Delete.cshtml",
@@ -926,7 +939,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Index.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Index.cshtml",
@@ -939,7 +952,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
               "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
@@ -948,19 +961,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2026-06-11T03:26:30.429Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
-              "RelativeDocumentMoniker": "Projekat\\appsettings.json",
-              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
-              "RelativeToolTip": "Projekat\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-06-11T12:53:20.477Z",
               "EditorCaption": ""
             },
             {
