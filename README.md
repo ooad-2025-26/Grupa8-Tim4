@@ -4,17 +4,21 @@ BentoLab – Sistem za naručivanje personalizovanih bento torti
 Pristupni podaci za testiranje
 
   Administrator:
-    Email: admin@test.com
+    Email: admin5@bentolab.ba
     Lozinka: Admin123!
 
   Testni korisnik: 
-    Email: test@test.com
-    Lozinka: Test123!
+    Email: izubovic1@etf.unsa.ba
+    Lozinka: Ilma123!
 
-Link aplikacije
+Aplikacija je uspješno postavljena (deployana) na cloud platformu Render i u potpunosti je funkcionalna s produkcijskom bazom podataka.
 
-Aplikacija nije javno objavljena. Pokreće se lokalno kroz Visual Studio razvojno okruženje.
-U skladu sa uputama za predaju, konekcijski string za pristup bazi podataka poslan je odgovornom asistentu/demonstratoru putem e-maila prije roka za predaju. 
+Link: https://bentolab.onrender.com
+
+Korištene tehnologije za deployment
+    Hosting platforma: Render (Web Services)
+    Baza podataka: Render PostgreSQL (Managed Database)
+    Runtime: Docker / .NET Core MVC
 
 Članovi tima
 
