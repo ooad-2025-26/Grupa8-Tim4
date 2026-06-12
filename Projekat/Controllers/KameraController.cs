@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using System.Threading.Tasks;
+using System.Threading.Tasks; // <- Potrebno za Task
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 
@@ -32,7 +32,7 @@ namespace BentoLab.Controllers
 
         // Metoda koja prihvata uslikanu sliku i spašava je
         [HttpPost]
-        public IActionResult SpasiSliku(string base64Image, int narudzbaId)
+        public async Task<IActionResult> SpasiSliku(string base64Image, int narudzbaId)
         {
             if (string.IsNullOrEmpty(base64Image))
             {
@@ -51,7 +51,7 @@ namespace BentoLab.Controllers
 
             string imeFajla = $"bento_narudzba_{narudzbaId}.jpg";
             string kompletnaPutanja = Path.Combine(folderPutanja, imeFajla);
-            System.IO.File.WriteAllBytes(kompletnaPutanja, bajtoviSlike);
+            await System.IO.File.WriteAllBytesAsync(kompletnaPutanja, bajtoviSlike); // Koristimo asinkrono pisanje
 
             // Relativna putanja koju spremamo u bazu i šaljemo servisu
             string putanjaZaMail = "/slike_torta/" + imeFajla;
@@ -64,6 +64,8 @@ namespace BentoLab.Controllers
             EmailService.PosaljiObavjestenje(emailKupca, testniBrojNarudzbe, "Spremno za preuzimanje", putanjaZaMail);
 
             TempData["Poruka"] = "Uspješno uslikana bento torta i poslana obavijest sa slikom na e-mail!";
+
+            // Vraća direktno na Admin Panel 
             return RedirectToAction("AdminPanel", "Home");
         }
     }
