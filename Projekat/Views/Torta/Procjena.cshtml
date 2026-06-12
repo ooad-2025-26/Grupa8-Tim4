@@ -51,6 +51,8 @@
     </div>
 
     <form asp-controller="Torta" asp-action="DodajUKorpu" method="post">
+        <input type="hidden" name="nazivTorte" value="@($"{okus} bento cake ({oblik})")" />
+        <input type="hidden" name="cijenaTorte" value="@ukupno" />
         <div class="d-flex justify-content-between">
             <a asp-action="Dekoracija" class="btn btn-light btn-lg px-4 shadow-sm" style="border-radius: 10px;">Izmijeni izbor</a>
             <button type="submit" class="btn btn-success btn-lg px-5 shadow-sm fw-bold" style="border-radius: 10px; background-color: #3d405b; border: none;">

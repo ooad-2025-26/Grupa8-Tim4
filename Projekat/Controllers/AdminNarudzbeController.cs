@@ -27,7 +27,22 @@ namespace BentoLab.Controllers
 
             return View(sveNarudzbe);
         }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+                return NotFound();
 
+            var narudzba = await _context.Narudzbe
+            .Include(n => n.Korisnik)
+            .Include(n => n.Stavke)
+            .ThenInclude(s => s.Torta)
+            .FirstOrDefaultAsync(n => n.NarudzbaID == id);
+
+            if (narudzba == null)
+                return NotFound();
+
+            return View(narudzba);
+        }
         // 2. AKCIJA ZA PROMJENU STATUSA NARUDŽBE (U bazi i na ekranu)
         [HttpPost]
         [ValidateAntiForgeryToken]

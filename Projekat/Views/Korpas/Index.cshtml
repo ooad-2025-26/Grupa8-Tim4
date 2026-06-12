@@ -1,18 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Vaša Korpa";
 
-    // Povlačimo nizove torti iz TempData memorije
     string[] naziviTorti = TempData["NazivKreiraneTorte"] as string[];
     string[] cijeneTorti = TempData["CijenaKreiraneTorte"] as string[];
 
-    // Drži podatke aktivnim u slučaju da korisnik uradi Refresh stranice
     TempData.Keep("NazivKreiraneTorte");
     TempData.Keep("CijenaKreiraneTorte");
 
     double ukupniZbirZaUplatu = 0;
 }
 
-<div class="container mt-4" style="max-width: 850px; background-color: #f7ede2; padding: 30px; border-radius: 15px;">
+<div class="container mt-4" style="max-width: 900px; background-color: #f7ede2; padding: 30px; border-radius: 15px;">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 style="color: #bc6c25; font-weight: bold; margin: 0;">🛒 Vaša Korpa</h2>
         <a asp-controller="Torta" asp-action="Index" class="btn btn-outline-secondary btn-sm" style="border-radius: 8px;">+ Dodaj još proizvoda</a>
@@ -25,15 +23,14 @@
                 <th>Cijena</th>
                 <th>Količina</th>
                 <th>Ukupno</th>
+                <th>Akcija</th>
             </tr>
         </thead>
         <tbody>
             @if (naziviTorti != null && naziviTorti.Length > 0 && !string.IsNullOrEmpty(naziviTorti[0]))
             {
-                // Prolazimo kroz sve torte koje su skupljene u listi
                 for (int i = 0; i < naziviTorti.Length; i++)
                 {
-                    // OSIGURANJE OD HILJADA MARAKA: Čitamo cijenu tačno onako kako je zapisana u kontroleru
                     double trenutnaCijena = double.Parse(cijeneTorti[i], System.Globalization.CultureInfo.InvariantCulture);
                     ukupniZbirZaUplatu += trenutnaCijena;
 
@@ -44,13 +41,21 @@
                             <span class="badge bg-light text-dark p-2 border">1 kom</span>
                         </td>
                         <td class="fw-bold" style="color: #e07a5f; font-size: 18px;">@trenutnaCijena.ToString("0.00") KM</td>
+                        <td>
+                            <form asp-controller="Korpas" asp-action="Ukloni" method="post" style="display:inline;">
+                                <input type="hidden" name="index" value="@i" />
+                                <button type="submit" class="btn btn-sm btn-outline-danger" style="border-radius: 8px;">
+                                    Ukloni
+                                </button>
+                            </form>
+                        </td>
                     </tr>
                 }
             }
             else
             {
                 <tr>
-                    <td colspan="4" class="text-muted py-5 fs-5">Vaša korpa je trenutno prazna.</td>
+                    <td colspan="5" class="text-muted py-5 fs-5">Vaša korpa je trenutno prazna.</td>
                 </tr>
             }
         </tbody>

@@ -57,20 +57,15 @@ namespace BentoLab.Areas.Identity.Pages.Account
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, false, lockoutOnFailure: false);
 
                 if (result.Succeeded)
-                { 
-
-                    // 1. ime u 'adminKorisnik' da se ne sudara sa postojećim 'user'
+                {
                     var adminKorisnik = await _userManager.FindByEmailAsync(Input.Email);
 
-                    // 2. Provjera uloge koristeći novo ime varijable
-                    if (adminKorisnik != null && await _userManager.IsInRoleAsync(adminKorisnik, "Admin"))
+                    if (adminKorisnik != null && adminKorisnik.Uloga == Uloga.ADMIN)
                     {
-                        // Ako je admin, šalji ga direktno na AdminPanel u HomeControlleru
                         return RedirectToAction("AdminPanel", "Home");
                     }
 
-                    // Ako nije admin, šalji ga na početnu stranicu za klijente
-                    return LocalRedirect("~/");
+                    return RedirectToAction("Index", "Torta");
                 }
 
                 if (result.IsLockedOut)

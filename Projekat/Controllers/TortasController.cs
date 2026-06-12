@@ -27,9 +27,8 @@ namespace BentoLab.Controllers
         // čistimo zaostale torte od prošlog puta. Tako aplikacija kreće od nule!
         public IActionResult Kreiraj()
         {
-            // Čistimo stare torte iz TempData čim korisnik pokrene proces izrade nove torte
-            TempData["NazivKreiraneTorte"] = null;
-            TempData["CijenaKreiraneTorte"] = null;
+            TempData.Keep("NazivKreiraneTorte");
+            TempData.Keep("CijenaKreiraneTorte");
 
             return View();
         }
@@ -102,24 +101,19 @@ namespace BentoLab.Controllers
 
         // Vraćeno na stabilni TempData sistem koji sigurno radi na klik!
         [HttpPost]
-        public IActionResult DodajUKorpu()
+        public IActionResult DodajUKorpu(string nazivTorte, string cijenaTorte)
         {
-            string okus = TempData["IzabraniOkus"]?.ToString() ?? "Custom";
-            string oblik = TempData["IzabraniOblik"]?.ToString() ?? "Krug";
-            string cijenaKonacna = TempData["UkupnaCijenaKonacna"]?.ToString() ?? "25.00";
-            string dinamickiNazivTorte = $"{okus} bento cake ({oblik})";
-
             List<string> naziviLista = TempData["NazivKreiraneTorte"] as string[] != null
-                ? (TempData["NazivKreiraneTorte"] as string[]).ToList()
-                : new List<string>();
+            ? (TempData["NazivKreiraneTorte"] as string[]).ToList()
+            : new List<string>();
 
             List<string> cijeneLista = TempData["CijenaKreiraneTorte"] as string[] != null
-                ? (TempData["CijenaKreiraneTorte"] as string[]).ToList()
-                : new List<string>();
+            ? (TempData["CijenaKreiraneTorte"] as string[]).ToList()
+            : new List<string>();
 
-            naziviLista.Add(dinamickiNazivTorte);
+            naziviLista.Add(nazivTorte);
 
-            double parsiranaCijena = double.Parse(cijenaKonacna, CultureInfo.InvariantCulture);
+            double parsiranaCijena = double.Parse(cijenaTorte, CultureInfo.InvariantCulture);
             cijeneLista.Add(parsiranaCijena.ToString("0.00", CultureInfo.InvariantCulture));
 
             TempData["NazivKreiraneTorte"] = naziviLista.ToArray();
