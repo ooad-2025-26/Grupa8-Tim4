@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\iTTaste\\Desktop\\OOAD git\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\ittaste\\desktop\\ooad git\\projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\kameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\stavkanarudzbes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\stavkanarudzbes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\ittaste\\desktop\\ooad git\\projekat\\controllers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\controllers\\stavkanarudzbescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\controllers\\stavkanarudzbescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\ittaste\\desktop\\ooad git\\projekat\\views\\kamera\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\kamera\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\narudzbas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\ittaste\\desktop\\ooad git\\projekat\\views\\kamera\\uslikajbento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\views\\kamera\\uslikajbento.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\admin\\source\\repos\\grupa8-tim4\\projekat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|solutionrelative:projekat\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{964BDE6B-FA0D-182F-253F-AEC875C44414}|Projekat\\BentoLab.csproj|c:\\users\\ittaste\\desktop\\ooad git\\projekat\\views\\korpas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -184,6 +184,71 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAG4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-11T18:03:17.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Create.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Create.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Torta\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T13:28:53.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Delete.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Torta\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T13:31:14.327Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Index.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\Torta\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\Torta\\Index.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\Torta\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T13:30:08.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "RelativeToolTip": "Projekat\\Views\\StavkaNarudzbes\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-06-11T03:26:30.429Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
+              "RelativeDocumentMoniker": "Projekat\\appsettings.json",
+              "ToolTip": "C:\\Users\\Korisnik\\Grupa8-Tim4\\Projekat\\appsettings.json",
+              "RelativeToolTip": "Projekat\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-06-11T12:53:20.477Z",
               "EditorCaption": ""
             },
             {

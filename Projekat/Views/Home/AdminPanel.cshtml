@@ -1,0 +1,144 @@
+﻿@model IEnumerable<BentoLab.Models.Korisnik>
+
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<style>
+    body {
+        background-color: #fcf8f2; 
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .admin-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 25px rgba(93, 64, 55, 0.08); 
+        padding: 35px;
+        margin-top: 50px;
+        border: 1px solid rgba(93, 64, 55, 0.1);
+        position: relative;
+        z-index: 2;
+    }
+
+    .admin-title {
+        font-family: 'Playfair Display', serif;
+        color: #5d4037;
+        font-weight: 700;
+        margin-bottom: 25px;
+        letter-spacing: -0.5px;
+    }
+
+    .bento-table-container {
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid rgba(226, 155, 131, 0.2);
+    }
+
+    .bento-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0;
+    }
+
+        .bento-table thead th {
+            background-color: #e29b83; 
+            color: white;
+            font-weight: 600;
+            padding: 15px;
+            text-align: left;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .bento-table tbody td {
+            padding: 18px 15px;
+            color: #5d4037;
+            background-color: white;
+            border-bottom: 1px solid rgba(226, 155, 131, 0.1);
+            font-size: 1rem;
+        }
+
+        .bento-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .bento-table tbody tr:hover td {
+            background-color: #fcefe9;
+            transition: background-color 0.2s ease;
+        }
+
+    .user-id-cell {
+        font-family: 'Courier New', monospace;
+        font-size: 0.85rem;
+        color: #8d6e63;
+    }
+
+    .status-badge {
+        background-color: #d1856c; 
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<div class="container pb-5">
+    <div class="admin-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="admin-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-people-fill me-3" viewBox="0 0 16 16">
+                    <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" />
+                </svg>
+                Upravljanje korisnicima
+            </h2>
+            <div class="text-end">
+                <div class="fw-bold" style="color: #5d4037; font-size: 1.2rem;">@Model.Count()</div>
+                <div class="text-muted" style="font-size: 0.85rem;">Ukupno računa</div>
+            </div>
+        </div>
+        
+        <p class="text-muted mb-4" style="font-size: 0.95rem;">
+            Dobrodošli u BentoLab Admin Panel. Ispod je prikazana lista svih registrovanih klijenata, sortirana hronološki (od najnovijeg kreiranog računa).
+        </p>
+
+        <div class="bento-table-container shadow-sm">
+            <div class="table-responsive">
+                <table class="bento-table">
+                    <thead>
+                        <tr>
+                            <th>Korisničko ime</th>
+                            <th>Email adresa</th>
+                            <th>ID Korisnika</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var user in Model)
+                        {
+                            <tr>
+                                <td class="fw-bold">@user.UserName</td>
+                                <td>@user.Email</td>
+                                <td class="user-id-cell">@user.Id</td>
+                                <td>
+                                    <span class="status-badge">Klijent</span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="mt-4 text-center text-muted" style="font-size: 0.85rem;">
+            &copy; 2026 BentoLab Sigurnosni Sistem. Sva prava zadržana.
+        </div>
+    </div>
+</div>
